@@ -11,16 +11,12 @@ model_cfg_path = os.path.join('models', 'cfg', 'darknet-yolov3.cfg')
 model_weights_path = os.path.join('.', 'models', 'weights', 'model.weights')
 class_names_path = os.path.join('models', 'class.names')
 
-input_dir = 'data'
+img_path = './data/number1.jpg'
 
-for img_name in os.listdir(input_dir):
-
-    img_path = os.path.join(input_dir, img_name)
-
-    # load class names
-    with open(class_names_path, 'r') as f:
-        class_names = [j[:-1] for j in f.readlines() if len(j) > 2]
-        f.close()
+# load class names
+with open(class_names_path, 'r') as f:
+    class_names = [j[:-1] for j in f.readlines() if len(j) > 2]
+    f.close()
 
     # load model
     net = cv2.dnn.readNetFromDarknet(model_cfg_path, model_weights_path)
@@ -97,7 +93,7 @@ for img_name in os.listdir(input_dir):
             if text_score > 0.4:
                 print(text, text_score)
 
-    #This test to see if this machine to be able to recongise the car plate.
+    # This test to see if this machine to be able to recongise the car plate.
     # plt.figure()
     # plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
     #
