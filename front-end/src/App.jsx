@@ -14,7 +14,8 @@ function App() {
     // HTTP request to Flask server
     axios.get(`${ENDPOINT}/api/data`)
       .then(response => {
-        setHttpResponse(response.data.message);
+        setHttpResponse(response.data);
+        console.log(response.data);
       })
       .catch(error => {
         console.error("There was an error making the request!", error);
