@@ -1,42 +1,91 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fbfbfb;
+    height: 100vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dragger_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #344150;
+    padding: 40px;
+    border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.dragger {
+    width: 600px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px dashed #fbfbfb;
+    border-radius: 5px;
+    background-color: #4DAAA7;
 }
 
-.card {
-  padding: 2em;
+.dragger.active {
+    border: 2px dashed #000000;
 }
 
-.read-the-docs {
-  color: #888;
+.dragger img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.filename {
+    width: 100%;
+}
+
+.fileName {
+    padding: 5px;
+    width: 100%;
+    margin: 10px 0 0 0;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-trash-can {
+    color: red;
+    cursor: pointer;
+}
+
+.icon {
+    color: #ffffff;
+    font-size: 45px;
+    margin: 10px 0;
+}
+
+h2,
+h3 {
+    margin: 5px 0;
+    color: #ffffff;
+}
+
+button {
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #333333;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
 }
