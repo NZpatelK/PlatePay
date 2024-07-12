@@ -15,7 +15,7 @@ img_path = './data/number1.jpg'
 
 
 # load class names
-def get_plate_number():
+def get_plate_number(filename):
     with open(class_names_path, 'r') as f:
         class_names = [j[:-1] for j in f.readlines() if len(j) > 2]
         f.close()
@@ -25,7 +25,8 @@ def get_plate_number():
 
         # load image
 
-        img = cv2.imread(img_path)
+        # img = cv2.imread(img_path)
+        img = cv2.imread(filename)
 
         H, W, _ = img.shape
 
