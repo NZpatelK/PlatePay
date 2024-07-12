@@ -3,7 +3,7 @@ import axios from 'axios';
 import { io } from 'socket.io-client';
 import './App.css';
 
-const socket = io('http://localhost:5000');
+const socket = io('http://127.0.0.1:5000');
 
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -12,6 +12,7 @@ function App() {
   useEffect(() => {
     socket.on('plate_recognized', (data) => {
       setPlateNumber(data.plate_number);
+      console.log(data.plate_number);
     });
 
     return () => {
@@ -29,7 +30,7 @@ function App() {
     formData.append('image', selectedFile);
 
     try {
-      await axios.post('http://localhost:5000/api/upload', formData, {
+      await axios.post('http://127.0.0.1:5000/api/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -46,7 +47,7 @@ function App() {
         <input type="file" onChange={handleFileChange} />
         <button type="submit">Upload and Recognize</button>
       </form>
-      {plateNumber && <div>Recognized Plate Number: {plateNumber}</div>}
+      {/* {plateNumber && <div>Recognized Plate Number: {plateNumber}</div>} */}
     </div> 
   );
 }
