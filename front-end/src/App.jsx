@@ -1,62 +1,65 @@
-// import { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import socketIOClient from 'socket.io-client';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { io } from 'socket.io-client';
 import './App.css';
 import DragAndDrop from './components/dragAndDrop';
 
-// const ENDPOINT = "http://127.0.0.1:5000"; // Flask server endpoint
+const socket = io('http://127.0.0.1:5000');
 
 function App() {
-  // const [httpResponse, setHttpResponse] = useState("");
-  // const [socketResponse, setSocketResponse] = useState("");
-  // const [message, setMessage] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [plateNumber, setPlateNumber] = useState('');
 
-  // useEffect(() => {
-  //   // HTTP request to Flask server
-  //   axios.get(`${ENDPOINT}/api/data`)
-  //     .then(response => {
-  //       setHttpResponse(response.data);
-  //       console.log(response.data);
-  //     })
-  //     .catch(error => {
-  //       console.error("There was an error making the request!", error);
-  //     });
+  useEffect(() => {
+    socket.on('plate_recognized', (data) => {
+      setPlateNumber(data.plate_number);
+      console.log(data.plate_number);
+    });
 
-  //   // Socket.IO connection
-  //   const socket = socketIOClient(ENDPOINT);
-  //   socket.on("message", data => {
-  //     setSocketResponse(data);
-  //   });
+    return () => {
+      socket.off('plate_recognized');
+    };
+  }, []);
 
-  //   return () => socket.disconnect();
-  // }, []);
+  const handleFileChange = (file) => {
+    setSelectedFile(file);
+    console.log("file: ", file);
+  };
 
-  // const sendMessage = () => {
-  //   const socket = socketIOClient(ENDPOINT);
-  //   socket.send(message);
-  //   setMessage("");
-  // };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log("selectedFile: ", selectedFile);
+    const formData = new FormData();
+    formData.append('image', selectedFile);
+
+    try {
+      await axios.post('http://127.0.0.1:5000/api/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+    } catch (error) {
+      console.error('Error uploading image:', error);
+    }
+  };
 
   return (
     <div>
-      <DragAndDrop/>
-      {/* <h1>React and Flask Communication</h1>
-      <div>
-        <h2>HTTP Response</h2>
-        <p>{httpResponse}</p>
-      </div>
-      <div>
-        <h2>Socket.IO Response</h2>
-        <p>{socketResponse}</p>
-      </div>
-      <input 
-        type="text" 
-        value={message} 
-        onChange={(e) => setMessage(e.target.value)} 
-      />
-      <button onClick={sendMessage}>Send Message</button> */}
+      <h1 className='title'>Number Plate Recognition</h1>
+      <DragAndDrop imageFile={handleFileChange} />
+      <button className='submit' onClick={handleSubmit}>Upload and Recognise</button>
+      {plateNumber && <div>Recognised Plate Number: {plateNumber}</div>}
+
+
+
+      {/* <form onSubmit={handleSubmit}>
+        <input type="file" onChange={handleFileChange} />
+        <button type="submit">Upload and Recognize</button>
+      </form>
+      {plateNumber && <div>Recognized Plate Number: {plateNumber}</div>} */}
     </div>
   );
 }
 
 export default App;
+

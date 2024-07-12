@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './dragAndDrop.css';
+import PropTypes from 'prop-types';
 
-const DragAndDrop = () => {
+const DragAndDrop = ({ imageFile }) => {
     const [isDragOver, setIsDragOver] = useState(false);
     const [uploadedImage, setUploadedImage] = useState('');
     const [isImageUploaded, setIsImageUploaded] = useState(false);
@@ -19,6 +20,7 @@ const DragAndDrop = () => {
     const handleDrop = (e) => {
         e.preventDefault();
         const image = e.dataTransfer.files[0];
+        imageFile(image);
         handleFileUpload(image);
     };
 
@@ -74,5 +76,10 @@ const DragAndDrop = () => {
         </div>
     );
 };
+
+DragAndDrop.propTypes = {
+    imageFile: PropTypes.instanceOf(File)
+};
+
 
 export default DragAndDrop;
