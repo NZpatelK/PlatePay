@@ -1,59 +1,54 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import socketIOClient from 'socket.io-client';
+import { io } from 'socket.io-client';
 import './App.css';
 
-const ENDPOINT = "http://127.0.0.1:5000"; // Flask server endpoint
+const socket = io('http://127.0.0.1:5000');
 
 function App() {
-  const [httpResponse, setHttpResponse] = useState("");
-  const [socketResponse, setSocketResponse] = useState("");
-  const [message, setMessage] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [plateNumber, setPlateNumber] = useState('');
 
   useEffect(() => {
-    // HTTP request to Flask server
-    axios.get(`${ENDPOINT}/api/data`)
-      .then(response => {
-        setHttpResponse(response.data);
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.error("There was an error making the request!", error);
-      });
-
-    // Socket.IO connection
-    const socket = socketIOClient(ENDPOINT);
-    socket.on("message", data => {
-      setSocketResponse(data);
+    socket.on('plate_recognized', (data) => {
+      setPlateNumber(data.plate_number);
+      console.log(data.plate_number);
     });
 
-    return () => socket.disconnect();
+    return () => {
+      socket.off('plate_recognized');
+    };
   }, []);
 
-  const sendMessage = () => {
-    const socket = socketIOClient(ENDPOINT);
-    socket.send(message);
-    setMessage("");
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append('image', selectedFile);
+
+    try {
+      await axios.post('http://127.0.0.1:5000/api/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+    } catch (error) {
+      console.error('Error uploading image:', error);
+    }
   };
 
   return (
     <div>
-      <h1>React and Flask Communication</h1>
-      <div>
-        <h2>HTTP Response</h2>
-        <p>{httpResponse}</p>
-      </div>
-      <div>
-        <h2>Socket.IO Response</h2>
-        <p>{socketResponse}</p>
-      </div>
-      <input 
-        type="text" 
-        value={message} 
-        onChange={(e) => setMessage(e.target.value)} 
-      />
-      <button onClick={sendMessage}>Send Message</button>
-    </div>
+      <h1>Number Plate Recognition</h1>
+      <form onSubmit={handleSubmit}>
+        <input type="file" onChange={handleFileChange} />
+        <button type="submit">Upload and Recognize</button>
+      </form>
+      {/* {plateNumber && <div>Recognized Plate Number: {plateNumber}</div>} */}
+    </div> 
   );
 }
 
