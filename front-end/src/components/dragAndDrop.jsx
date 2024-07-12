@@ -44,7 +44,7 @@ const DragAndDrop = () => {
     return (
         <div className="dragger-wrapper">
             <div
-                className={`dragger ${isImageUploaded ? 'active' : ''}`}
+                className={`dragger ${isImageUploaded ? ' active' : ''}`}
                 id="dragger"
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
