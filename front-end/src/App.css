@@ -30,3 +30,12 @@
   transform: scale(1.1);
 }
 
+.plate-number{
+  color: #ffffff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+}
+
