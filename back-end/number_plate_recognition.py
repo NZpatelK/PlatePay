@@ -2,7 +2,7 @@ import os
 
 import cv2
 import numpy as np
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import easyocr
 import util
 
@@ -25,8 +25,8 @@ def get_plate_number(filename):
 
         # load image
 
-        # img = cv2.imread(img_path)
-        img = cv2.imread(filename)
+        img = cv2.imread('temp.jpg')
+        # img = cv2.imread(filename)
 
         H, W, _ = img.shape
 
@@ -93,21 +93,25 @@ def get_plate_number(filename):
 
             for out in output:
                 text_bbox, text, text_score = out
-                if text_score > 0.4:
-                    print(text, text_score)
-                    return text
+                print(text, text_score)
+                return text
+                # if text_score > 0.4:
+                #     # print(text, text_score)
+                #     return text
 
         # This test to see if this machine to be able to recongise the car plate.
-        # plt.figure()
-        # plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-        #
-        # plt.figure()
-        # plt.imshow(cv2.cvtColor(license_plate, cv2.COLOR_BGR2RGB))
-        #
-        # plt.figure()
-        # plt.imshow(cv2.cvtColor(license_plate_gray, cv2.COLOR_BGR2RGB))
-        #
-        # plt.figure()
-        # plt.imshow(cv2.cvtColor(license_plate_thresh, cv2.COLOR_BGR2RGB))
-        #
-        # plt.show()
+        plt.figure()
+        plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+
+        plt.figure()
+        plt.imshow(cv2.cvtColor(license_plate, cv2.COLOR_BGR2RGB))
+
+        plt.figure()
+        plt.imshow(cv2.cvtColor(license_plate_gray, cv2.COLOR_BGR2RGB))
+
+        plt.figure()
+        plt.imshow(cv2.cvtColor(license_plate_thresh, cv2.COLOR_BGR2RGB))
+
+        plt.show()
+
+# get_plate_number('none')
