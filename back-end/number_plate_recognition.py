@@ -11,8 +11,6 @@ model_cfg_path = os.path.join('models', 'cfg', 'darknet-yolov3.cfg')
 model_weights_path = os.path.join('.', 'models', 'weights', 'model.weights')
 class_names_path = os.path.join('models', 'class.names')
 
-img_path = './data/number1.jpg'
-
 
 # load class names
 def get_plate_number(filename):
@@ -25,7 +23,7 @@ def get_plate_number(filename):
 
         # load image
 
-        img = cv2.imread('temp.jpg')
+        img = cv2.imread('./data/temp.jpg')
         # img = cv2.imread(filename)
 
         H, W, _ = img.shape
@@ -94,24 +92,24 @@ def get_plate_number(filename):
             for out in output:
                 text_bbox, text, text_score = out
                 print(text, text_score)
-                return text
+                # return text
                 # if text_score > 0.4:
                 #     # print(text, text_score)
                 #     return text
 
         # This test to see if this machine to be able to recongise the car plate.
-        plt.figure()
-        plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+        # plt.figure()
+        # plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+        #
+        # plt.figure()
+        # plt.imshow(cv2.cvtColor(license_plate, cv2.COLOR_BGR2RGB))
+        #
+        # plt.figure()
+        # plt.imshow(cv2.cvtColor(license_plate_gray, cv2.COLOR_BGR2RGB))
+        #
+        # plt.figure()
+        # plt.imshow(cv2.cvtColor(license_plate_thresh, cv2.COLOR_BGR2RGB))
+        #
+        # plt.show()
 
-        plt.figure()
-        plt.imshow(cv2.cvtColor(license_plate, cv2.COLOR_BGR2RGB))
-
-        plt.figure()
-        plt.imshow(cv2.cvtColor(license_plate_gray, cv2.COLOR_BGR2RGB))
-
-        plt.figure()
-        plt.imshow(cv2.cvtColor(license_plate_thresh, cv2.COLOR_BGR2RGB))
-
-        plt.show()
-
-# get_plate_number('none')
+get_plate_number('none')
