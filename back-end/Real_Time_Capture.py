@@ -1,6 +1,6 @@
 import cv2
 
-import number_plate_recognition
+import predict_modified
 
 
 def capture():
@@ -49,10 +49,9 @@ def capture():
             cv2.imshow("Result", img)
             print(f"Saved: {save_path}")
             cv2.waitKey(500)
-            output_value = number_plate_recognition.get_plate_number('temp.jpg')
-            print("running", output_value)
+            output_value = predict_modified.get_result()
 
-            if output_value is not None:
+            if output_value:
                 print("real time", output_value)
                 break
                 # cap.release()
@@ -68,5 +67,3 @@ def capture():
     cap.release()
     cv2.destroyAllWindows()
     print("destory complete it")
-
-capture()

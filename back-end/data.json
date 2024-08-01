@@ -1,0 +1,52 @@
+[
+    {
+        "id": "2bb30313-8d06-4944-86f4-652cfa7bdc6c",
+        "timestamp": "2024-08-01T12:09:37.037555",
+        "license_number": "ABC123"
+    },
+    {
+        "id": "26ac6666-d933-4b04-84d8-980b9e96a4c1",
+        "timestamp": "2024-08-01T12:11:45.825737",
+        "license_number": "ABC123"
+    },
+    {
+        "id": "1d44aca5-a68e-4879-bbe7-372c044326a4",
+        "timestamp": "2024-08-01T12:14:30.007158",
+        "license_number": "ABC123"
+    },
+    {
+        "id": "d6123985-cd21-433d-ad3c-ffd740b6ac50",
+        "timestamp": "2024-08-01T12:35:20.535489",
+        "license_number": "000025045"
+    },
+    {
+        "id": "b112e5a4-695a-4e58-a742-ec8ba7efd9fd",
+        "timestamp": "2024-08-01T12:35:54.026430",
+        "license_number": "5035"
+    },
+    {
+        "id": "5b8a53ed-a412-4efd-aadb-bdcae8ae0ace",
+        "timestamp": "2024-08-01T12:37:08.508218",
+        "license_number": "9JRI205"
+    },
+    {
+        "id": "00d44a22-c15e-46bc-bbb5-eb43718ea09e",
+        "timestamp": "2024-08-01T12:40:18.726245",
+        "license_number": "CARBON"
+    },
+    {
+        "id": "e8323ce6-bc6c-4aed-a038-66072b520dbd",
+        "timestamp": "2024-08-01T12:42:17.880345",
+        "license_number": "Inity 5"
+    },
+    {
+        "id": "27e57e4d-d0ac-4e81-97e3-7b9e7c7ef8ec",
+        "timestamp": "2024-08-01T12:44:04.483369",
+        "license_number": "Inity 5"
+    },
+    {
+        "id": "c0b9618d-2bc6-482a-96ab-95220d97de7e",
+        "timestamp": "2024-08-01T12:45:08.515231",
+        "license_number": "Inity 5"
+    }
+]

@@ -92,6 +92,8 @@ class BasePredictor:
         self.callbacks = defaultdict(list, {k: [v] for k, v in callbacks.default_callbacks.items()})  # add callbacks
         callbacks.add_integration_callbacks(self)
 
+        self.result = None
+
     def preprocess(self, img):
         pass
 

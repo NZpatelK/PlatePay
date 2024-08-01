@@ -147,16 +147,17 @@ def write_in_json(result):
 
 @hydra.main(version_base=None, config_path=str(DEFAULT_CONFIG.parent), config_name=DEFAULT_CONFIG.name)
 def predict(cfg):
-    cfg.model = 'ultralytics/runs/detect/train_model/weights/best.pt'
+    cfg.model = 'number_plate_recognition/ultralytics/runs/detect/train_model/weights/best.pt'
     cfg.imgsz = check_imgsz(cfg.imgsz, min_dim=2)  # check image size
-    cfg.source = 'temp.jpg'
+    cfg.source = './data/temp.jpg'
     predictor = DetectionPredictor(cfg)
     predictor()
-    write_in_json(predictor.result)
+    if hasattr(predictor, 'result'):
+        write_in_json(predictor.result)
 
 def get_licence_plate():
     # Define the file path
-    file_path = 'number_plate_recognition/data.json'
+    file_path = 'data.json'
 
     # Read the JSON file
     with open(file_path, 'r') as file:
@@ -177,19 +178,18 @@ def get_licence_plate():
 def get_result():
     print("predict page")
     current_number = get_licence_plate()
+    print("predict start....")
     predict()
     new_number = get_licence_plate()
 
     print(current_number)
     print(new_number)
 
-    return current_number == new_number
+    return current_number != new_number
 
 
 if __name__ == "__main__":
     print("predict page")
-
-    predict()
-
+    get_result()
 
 

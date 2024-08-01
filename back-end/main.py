@@ -1,3 +1,4 @@
+import json
 import random
 import time
 
@@ -8,6 +9,9 @@ from flask_cors import CORS
 import Real_Time_Capture
 import number_plate_recognition
 from threading import Thread
+
+import predict_modified
+
 
 # app = Flask(__name__)
 # app.config['SECRET_KEY'] = 'mysecret'
@@ -53,11 +57,31 @@ from threading import Thread
 #     return jsonify({'message': 'Processing started'})
 
 
+def get_licence_plate():
+    # Define the file path
+    file_path = 'number_plate_recognition/data.json'
+
+    # Read the JSON file
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+
+    # Assuming the data is a list of records, get the latest entry
+    if isinstance(data, list) and data:
+        latest_entry = data[-1]  # Get the latest entry (last in the list)
+        license_number = latest_entry.get("license_number", "No license number found")
+        print(f'Latest license number: {license_number}')
+    else:
+        print("No data available or data is not in the expected format.")
+
 if __name__ == '__main__':
     # thread = Thread(target=generate_random_numbers)
     # thread.daemon = True
     # thread.start()
     # socketio.run(app, debug=True)
-    value = Real_Time_Capture.capture()
-    print("main ", value )
+    print("start")
+    # predict_modified.get_result()
+    Real_Time_Capture.capture()
+
+
+
 
