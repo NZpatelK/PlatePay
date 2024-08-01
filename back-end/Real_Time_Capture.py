@@ -22,31 +22,26 @@ def capture():
 
     while True:
         success, img = cap.read()
-        if not success:
-            print("Failed to capture image")
-            break
 
-        imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        numberPlates = plateCascade.detectMultiScale(imgGray, 1.1, 4)
+        img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-        imgRoi = None
-        for (x, y, w, h) in numberPlates:
+        number_plates = plateCascade.detectMultiScale(img_gray, 1.1, 4)
+        img_roi = None
+
+        for (x, y, w, h) in number_plates:
             area = w * h
             if area > minArea:
                 cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
                 cv2.putText(img, "NumberPlate", (x, y - 5), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 2)
-                imgRoi = img[y:y + h, x:x + w]
-                cv2.imshow("Number Plate", imgRoi)
-
+                img_roi = img[y:y + h, x:x + w]
+                cv2.imshow("Number Plate", img_roi)
         cv2.imshow("Result", img)
-        # if cv2.waitKey(1) & 0xFF == ord('s') and imgRoi is not None:
-        if imgRoi is not None:
-            # Save the ROI as an image
+        if cv2.waitKey(1) and img_roi is not None:
             save_path = f"./data/temp.jpg"
-            cv2.imwrite(save_path, imgRoi)
+            cv2.imwrite(save_path, img_roi)
             cv2.rectangle(img, (0, 200), (640, 300), (0, 255, 0), cv2.FILLED)
             cv2.putText(img, "Scan Saved", (15, 265), cv2.FONT_HERSHEY_COMPLEX, 2, (0, 0, 255), 2)
-            cv2.imshow("Result", img)
+            # cv2.imshow("Result", img)
             print(f"Saved: {save_path}")
             cv2.waitKey(500)
             output_value = predict_modified.get_result()
@@ -55,9 +50,11 @@ def capture():
                 print("real time", output_value)
                 cap.release()
                 cv2.destroyAllWindows()
-                print("destory complete it")
+                print("destroy complete it")
                 break
 
-    # cap.release()
-    # cv2.destroyAllWindows()
-    # print("destory complete it")
+
+if __name__ == '__main__':
+    print("start capture")
+    capture()
+
