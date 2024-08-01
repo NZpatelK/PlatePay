@@ -48,5 +48,80 @@
         "id": "c0b9618d-2bc6-482a-96ab-95220d97de7e",
         "timestamp": "2024-08-01T12:45:08.515231",
         "license_number": "Inity 5"
+    },
+    {
+        "id": "480b3e9d-cba1-4a68-a35e-bd070c37bc05",
+        "timestamp": "2024-08-01T12:46:07.937279",
+        "license_number": "Inity 5"
+    },
+    {
+        "id": "e2702204-c385-4d75-b525-321621e68dde",
+        "timestamp": "2024-08-01T12:47:59.430885",
+        "license_number": "Inity 5"
+    },
+    {
+        "id": "ee14fe8b-e42f-4fab-8c64-27a9ac5af386",
+        "timestamp": "2024-08-01T12:48:44.767401",
+        "license_number": "Inity 5"
+    },
+    {
+        "id": "0d434042-8282-4bcd-82ee-ef763a8fddfb",
+        "timestamp": "2024-08-01T12:52:32.682047",
+        "license_number": "Inity 5"
+    },
+    {
+        "id": "b232de05-480b-49c2-b325-6c73c9ad6240",
+        "timestamp": "2024-08-01T12:53:48.043989",
+        "license_number": "Inity 5"
+    },
+    {
+        "id": "5fb642c0-44bc-4604-be1a-5a73d6788136",
+        "timestamp": "2024-08-01T12:54:02.776917",
+        "license_number": "Inity 5"
+    },
+    {
+        "id": "c4747fbe-bc57-4319-88c4-511ba495535f",
+        "timestamp": "2024-08-01T12:55:45.734938",
+        "license_number": null
+    },
+    {
+        "id": "12c7ddd0-8611-4c0f-aed2-9142ea26362c",
+        "timestamp": "2024-08-01T12:56:47.118961",
+        "license_number": null
+    },
+    {
+        "id": "6d8fb469-297c-4801-9695-f14ba4f9dec1",
+        "timestamp": "2024-08-01T12:56:48.667934",
+        "license_number": ""
+    },
+    {
+        "id": "ba0e4439-40af-4682-aac8-31ab0146daf4",
+        "timestamp": "2024-08-01T12:57:07.534805",
+        "license_number": null
+    },
+    {
+        "id": "76a54067-aa1d-43ca-a047-599586a93f56",
+        "timestamp": "2024-08-01T13:01:40.978573",
+        "license_number": ""
+    },
+    {
+        "id": "44aa3380-bc7f-456d-bc22-e75be6637a73",
+        "timestamp": "2024-08-01T13:03:54.662868",
+        "license_number": null
+    },
+    {
+        "id": "c9db4952-793b-4020-a5a5-0433f475961a",
+        "timestamp": "2024-08-01T13:04:45.712985",
+        "license_number": null
+    },
+    {
+        "id": "cafd0d67-ca37-4a63-baa4-4f39fb8ca5c2",
+        "timestamp": "2024-08-01T13:04:46.682361",
+        "license_number": null
+    },
+    {
+        "id": "d8a5fa68-8146-47e5-ae80-48fe553ee426",
+        "timestamp": "2024-08-01T13:04:48.014810",
+        "license_number": "B2228 HM"
     }
 ]

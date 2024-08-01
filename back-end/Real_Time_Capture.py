@@ -54,16 +54,7 @@ def capture():
             if output_value:
                 print("real time", output_value)
                 break
-                # cap.release()
-                # cv2.destroyAllWindows()
-                # break
-                # return output_value
 
-
-
-#     if cv2.waitKey(1) & 0xFF == ord('q'):
-#         break
-#
     cap.release()
     cv2.destroyAllWindows()
     print("destory complete it")

@@ -185,7 +185,7 @@ def get_result():
     print(current_number)
     print(new_number)
 
-    return current_number != new_number
+    return ((current_number != new_number) and (new_number is not None) and (not new_number.isspace()))
 
 
 if __name__ == "__main__":
