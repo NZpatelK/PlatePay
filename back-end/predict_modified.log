@@ -1,0 +1,15 @@
+[2024-08-01 14:59:40,575][main][WARNING] - WebSocket transport not available. Install gevent-websocket for improved performance.
+[2024-08-01 14:59:40,761][werkzeug][INFO] -  * Restarting with stat
+[2024-08-01 14:59:55,137][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-01 14:59:55,172][werkzeug][INFO] -  * Debugger PIN: 580-605-717
+[2024-08-01 14:59:55,177][main][WARNING] - WebSocket transport not available. Install gevent-websocket for improved performance.
+[2024-08-01 15:09:21,448][main][WARNING] - WebSocket transport not available. Install gevent-websocket for improved performance.
+[2024-08-01 15:09:21,518][werkzeug][INFO] -  * Restarting with stat
+[2024-08-01 15:09:30,710][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-01 15:09:30,741][werkzeug][INFO] -  * Debugger PIN: 580-605-717
+[2024-08-01 15:09:30,747][main][WARNING] - WebSocket transport not available. Install gevent-websocket for improved performance.
+[2024-08-01 15:10:55,840][werkzeug][INFO] -  * Detected change in '/Users/karanpatel/Desktop/Project/PlatePay/back-end/main.py', reloading
+[2024-08-01 15:10:56,255][werkzeug][INFO] -  * Restarting with stat
+[2024-08-01 15:11:59,222][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-01 15:11:59,255][werkzeug][INFO] -  * Debugger PIN: 580-605-717
+[2024-08-01 15:11:59,262][main][WARNING] - WebSocket transport not available. Install gevent-websocket for improved performance.
