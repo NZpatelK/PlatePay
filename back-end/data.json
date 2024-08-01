@@ -5,123 +5,393 @@
         "license_number": "ABC123"
     },
     {
-        "id": "26ac6666-d933-4b04-84d8-980b9e96a4c1",
-        "timestamp": "2024-08-01T12:11:45.825737",
-        "license_number": "ABC123"
+        "id": "de6bd2ad-4173-4c1e-8ef5-358bb92aab9f",
+        "timestamp": "2024-08-01T14:57:32.110966",
+        "license_number": null
     },
     {
-        "id": "1d44aca5-a68e-4879-bbe7-372c044326a4",
-        "timestamp": "2024-08-01T12:14:30.007158",
-        "license_number": "ABC123"
-    },
-    {
-        "id": "d6123985-cd21-433d-ad3c-ffd740b6ac50",
-        "timestamp": "2024-08-01T12:35:20.535489",
-        "license_number": "000025045"
-    },
-    {
-        "id": "b112e5a4-695a-4e58-a742-ec8ba7efd9fd",
-        "timestamp": "2024-08-01T12:35:54.026430",
-        "license_number": "5035"
-    },
-    {
-        "id": "5b8a53ed-a412-4efd-aadb-bdcae8ae0ace",
-        "timestamp": "2024-08-01T12:37:08.508218",
+        "id": "5eaa2ad6-0692-4161-b012-7f84d282e8cf",
+        "timestamp": "2024-08-01T14:57:35.016265",
         "license_number": "9JRI205"
     },
     {
-        "id": "00d44a22-c15e-46bc-bbb5-eb43718ea09e",
-        "timestamp": "2024-08-01T12:40:18.726245",
-        "license_number": "CARBON"
-    },
-    {
-        "id": "e8323ce6-bc6c-4aed-a038-66072b520dbd",
-        "timestamp": "2024-08-01T12:42:17.880345",
-        "license_number": "Inity 5"
-    },
-    {
-        "id": "27e57e4d-d0ac-4e81-97e3-7b9e7c7ef8ec",
-        "timestamp": "2024-08-01T12:44:04.483369",
-        "license_number": "Inity 5"
-    },
-    {
-        "id": "c0b9618d-2bc6-482a-96ab-95220d97de7e",
-        "timestamp": "2024-08-01T12:45:08.515231",
-        "license_number": "Inity 5"
-    },
-    {
-        "id": "480b3e9d-cba1-4a68-a35e-bd070c37bc05",
-        "timestamp": "2024-08-01T12:46:07.937279",
-        "license_number": "Inity 5"
-    },
-    {
-        "id": "e2702204-c385-4d75-b525-321621e68dde",
-        "timestamp": "2024-08-01T12:47:59.430885",
-        "license_number": "Inity 5"
-    },
-    {
-        "id": "ee14fe8b-e42f-4fab-8c64-27a9ac5af386",
-        "timestamp": "2024-08-01T12:48:44.767401",
-        "license_number": "Inity 5"
-    },
-    {
-        "id": "0d434042-8282-4bcd-82ee-ef763a8fddfb",
-        "timestamp": "2024-08-01T12:52:32.682047",
-        "license_number": "Inity 5"
-    },
-    {
-        "id": "b232de05-480b-49c2-b325-6c73c9ad6240",
-        "timestamp": "2024-08-01T12:53:48.043989",
-        "license_number": "Inity 5"
-    },
-    {
-        "id": "5fb642c0-44bc-4604-be1a-5a73d6788136",
-        "timestamp": "2024-08-01T12:54:02.776917",
-        "license_number": "Inity 5"
-    },
-    {
-        "id": "c4747fbe-bc57-4319-88c4-511ba495535f",
-        "timestamp": "2024-08-01T12:55:45.734938",
+        "id": "85339b11-4a8e-45b5-8286-66606affe069",
+        "timestamp": "2024-08-01T14:58:42.569607",
         "license_number": null
     },
     {
-        "id": "12c7ddd0-8611-4c0f-aed2-9142ea26362c",
-        "timestamp": "2024-08-01T12:56:47.118961",
+        "id": "597cffda-4a4e-4c9d-8b58-6f85449503f9",
+        "timestamp": "2024-08-01T14:58:43.516852",
         "license_number": null
     },
     {
-        "id": "6d8fb469-297c-4801-9695-f14ba4f9dec1",
-        "timestamp": "2024-08-01T12:56:48.667934",
+        "id": "ce14193e-17ee-48a5-8374-2776de349c09",
+        "timestamp": "2024-08-01T14:58:44.541215",
+        "license_number": null
+    },
+    {
+        "id": "7e17a893-6a15-422c-aade-57aafb17f22b",
+        "timestamp": "2024-08-01T14:58:45.475328",
+        "license_number": null
+    },
+    {
+        "id": "18fd6530-9321-4e1d-b725-b2b242d68774",
+        "timestamp": "2024-08-01T14:58:46.724714",
+        "license_number": "CARBONIO"
+    },
+    {
+        "id": "63c92ecd-1ab2-43f3-8f87-dc5e8d0e5202",
+        "timestamp": "2024-08-01T14:59:40.468667",
+        "license_number": "Cabbowa_"
+    },
+    {
+        "id": "bd6151cc-bd7d-4f90-97a9-2179bdbdc929",
+        "timestamp": "2024-08-01T14:59:50.182495",
+        "license_number": null
+    },
+    {
+        "id": "c1f18ef6-7fa2-4417-8185-36d8d1386ac6",
+        "timestamp": "2024-08-01T14:59:55.053660",
+        "license_number": "9JRI205"
+    },
+    {
+        "id": "92eff4ab-e93f-4f2b-b275-f573ae405535",
+        "timestamp": "2024-08-01T15:09:05.059967",
+        "license_number": "9JRI205"
+    },
+    {
+        "id": "a637a567-cb88-41f7-9c2b-f0585df88ab8",
+        "timestamp": "2024-08-01T15:09:06.180666",
+        "license_number": "9JRI205"
+    },
+    {
+        "id": "21f40795-0b5b-40b5-851d-0893c8675091",
+        "timestamp": "2024-08-01T15:09:07.199452",
+        "license_number": null
+    },
+    {
+        "id": "d5626916-8fe9-4cc8-a3e1-38c9226cba1a",
+        "timestamp": "2024-08-01T15:09:15.353036",
+        "license_number": null
+    },
+    {
+        "id": "478c1924-9f80-4f11-b18a-4faeeab26028",
+        "timestamp": "2024-08-01T15:09:16.552512",
+        "license_number": null
+    },
+    {
+        "id": "f28fd6ea-e4e0-4a9f-bc19-ea8073fef0d6",
+        "timestamp": "2024-08-01T15:09:17.518486",
+        "license_number": null
+    },
+    {
+        "id": "1cc65f21-974a-4ab7-82a3-85b25c481299",
+        "timestamp": "2024-08-01T15:09:18.495133",
+        "license_number": null
+    },
+    {
+        "id": "7e61ddf4-e0bd-488d-b252-1f6c03ccc05a",
+        "timestamp": "2024-08-01T15:09:20.144468",
+        "license_number": null
+    },
+    {
+        "id": "30de4b5b-7bd6-4cfe-9b26-7ceaa3a7430f",
+        "timestamp": "2024-08-01T15:09:21.371782",
         "license_number": ""
     },
     {
-        "id": "ba0e4439-40af-4682-aac8-31ab0146daf4",
-        "timestamp": "2024-08-01T12:57:07.534805",
-        "license_number": null
+        "id": "6f13fc21-9c92-44de-8db4-6c86ea8d038b",
+        "timestamp": "2024-08-01T15:09:30.615634",
+        "license_number": "2228HM"
     },
     {
-        "id": "76a54067-aa1d-43ca-a047-599586a93f56",
-        "timestamp": "2024-08-01T13:01:40.978573",
+        "id": "8684f815-883c-4f29-80e1-95206953dbdc",
+        "timestamp": "2024-08-01T15:11:59.137073",
         "license_number": ""
     },
     {
-        "id": "44aa3380-bc7f-456d-bc22-e75be6637a73",
-        "timestamp": "2024-08-01T13:03:54.662868",
+        "id": "f34118b4-59c5-44c3-a104-2447b65550ab",
+        "timestamp": "2024-08-01T16:02:24.040935",
+        "license_number": "B2228HM"
+    },
+    {
+        "id": "5e77af7f-de25-4727-8233-7a323da2c48e",
+        "timestamp": "2024-08-01T16:02:25.914682",
+        "license_number": "B_2228HM"
+    },
+    {
+        "id": "228e9464-f9ea-4a89-b901-1f8f279b13f0",
+        "timestamp": "2024-08-01T16:04:22.473911",
         "license_number": null
     },
     {
-        "id": "c9db4952-793b-4020-a5a5-0433f475961a",
-        "timestamp": "2024-08-01T13:04:45.712985",
+        "id": "f763f56b-9fe2-4f69-b014-abdb2c97a9d7",
+        "timestamp": "2024-08-01T16:04:24.062143",
+        "license_number": "Balikowa_"
+    },
+    {
+        "id": "8f2c9e75-d677-447a-8ff7-f036f5c202cc",
+        "timestamp": "2024-08-01T16:06:30.246910",
+        "license_number": "9 IRT205"
+    },
+    {
+        "id": "177df7e6-4e9b-4cd7-afd8-6764eb3854d3",
+        "timestamp": "2024-08-01T16:17:05.000067",
+        "license_number": "B2228HM"
+    },
+    {
+        "id": "556db51d-f7d4-4e7d-94b4-5066d02451a9",
+        "timestamp": "2024-08-01T16:17:20.333788",
+        "license_number": "0 IPT?OE"
+    },
+    {
+        "id": "e87db50c-88d7-43e2-874c-7686bde20506",
+        "timestamp": "2024-08-01T16:17:35.068687",
         "license_number": null
     },
     {
-        "id": "cafd0d67-ca37-4a63-baa4-4f39fb8ca5c2",
-        "timestamp": "2024-08-01T13:04:46.682361",
+        "id": "7ef12a22-100e-4e6c-9d59-bea62b983eb1",
+        "timestamp": "2024-08-01T16:17:36.221095",
+        "license_number": "CARBOhIO"
+    },
+    {
+        "id": "58700867-d5de-4bd1-86fb-e8833d4354e8",
+        "timestamp": "2024-08-01T16:25:35.900778",
         "license_number": null
     },
     {
-        "id": "d8a5fa68-8146-47e5-ae80-48fe553ee426",
-        "timestamp": "2024-08-01T13:04:48.014810",
-        "license_number": "B2228 HM"
+        "id": "781f7b6c-6355-4881-b19b-dba38013a5b8",
+        "timestamp": "2024-08-01T16:25:37.706740",
+        "license_number": "LuIL"
+    },
+    {
+        "id": "1eaf0ef5-ecc6-42bb-b0a3-5d77299e9b86",
+        "timestamp": "2024-08-01T16:26:51.896614",
+        "license_number": null
+    },
+    {
+        "id": "11bf212a-2c9d-446a-aafc-b14267368e45",
+        "timestamp": "2024-08-01T16:26:52.845712",
+        "license_number": null
+    },
+    {
+        "id": "ae68fa7f-2096-479f-af43-08c1ac03872d",
+        "timestamp": "2024-08-01T16:26:53.711291",
+        "license_number": null
+    },
+    {
+        "id": "afe5d22b-9aff-4165-8c7d-0c6b49de2d5d",
+        "timestamp": "2024-08-01T16:26:54.594158",
+        "license_number": null
+    },
+    {
+        "id": "7f39f1d7-66aa-4c66-a958-350383339acc",
+        "timestamp": "2024-08-01T16:26:55.490487",
+        "license_number": null
+    },
+    {
+        "id": "fa26331a-cd42-42fe-ba34-74cdefd6568f",
+        "timestamp": "2024-08-01T16:26:56.379869",
+        "license_number": null
+    },
+    {
+        "id": "890f1a53-ddf1-49d1-b9fb-120861322e84",
+        "timestamp": "2024-08-01T16:26:57.258719",
+        "license_number": null
+    },
+    {
+        "id": "d0bbfbf0-38ea-407c-b1d4-3de1a656ee72",
+        "timestamp": "2024-08-01T16:26:58.248716",
+        "license_number": null
+    },
+    {
+        "id": "21b2e9f0-95b3-4e10-b5fe-0338b7708758",
+        "timestamp": "2024-08-01T16:26:59.719336",
+        "license_number": null
+    },
+    {
+        "id": "d1bb7b9a-f773-4b6b-865e-1ebe8be54a21",
+        "timestamp": "2024-08-01T16:27:00.752692",
+        "license_number": null
+    },
+    {
+        "id": "a590ee59-30f4-403f-9a73-a28353e7b29b",
+        "timestamp": "2024-08-01T16:27:01.612765",
+        "license_number": null
+    },
+    {
+        "id": "f43bf50d-89b6-47e4-9d06-c180eaa4d2f9",
+        "timestamp": "2024-08-01T16:27:49.377069",
+        "license_number": null
+    },
+    {
+        "id": "174fa728-f46e-4bda-9a6e-6e91835a7a14",
+        "timestamp": "2024-08-01T16:29:45.723027",
+        "license_number": null
+    },
+    {
+        "id": "a551a513-6b43-466d-910a-67ef113d5f74",
+        "timestamp": "2024-08-01T16:29:47.042042",
+        "license_number": "0idtaoc"
+    },
+    {
+        "id": "dccfc158-257b-4667-a71f-308633b09952",
+        "timestamp": "2024-08-01T16:30:02.872678",
+        "license_number": null
+    },
+    {
+        "id": "d3c6c885-1222-4036-af50-e65041bb80b5",
+        "timestamp": "2024-08-01T16:30:12.945986",
+        "license_number": ""
+    },
+    {
+        "id": "34425be3-06b5-4d82-8b1c-83677dcf54a0",
+        "timestamp": "2024-08-01T16:31:02.244792",
+        "license_number": "Caltoinia"
+    },
+    {
+        "id": "75a78af0-7e96-4e3e-9b16-4caa40068835",
+        "timestamp": "2024-08-01T16:31:37.679192",
+        "license_number": null
+    },
+    {
+        "id": "0963d909-91f5-477c-8f1b-dc59857a24fe",
+        "timestamp": "2024-08-01T16:31:39.017095",
+        "license_number": ""
+    },
+    {
+        "id": "8720c81f-19d3-426d-bab2-018ded0c3d81",
+        "timestamp": "2024-08-01T16:32:15.042675",
+        "license_number": ""
+    },
+    {
+        "id": "64cc3f62-fc71-4a76-b706-b8992bccf613",
+        "timestamp": "2024-08-01T16:32:16.197064",
+        "license_number": "CARBONIO"
+    },
+    {
+        "id": "83ca169e-3ed4-405b-97f7-2dc3661214a1",
+        "timestamp": "2024-08-01T16:32:40.149851",
+        "license_number": null
+    },
+    {
+        "id": "d388cf26-80db-4be7-82b7-d0d6f93efd04",
+        "timestamp": "2024-08-01T16:32:41.503107",
+        "license_number": "B 2228 HM"
+    },
+    {
+        "id": "4919c511-ebc3-4ec9-935c-de4174f140a2",
+        "timestamp": "2024-08-01T16:33:28.873657",
+        "license_number": null
+    },
+    {
+        "id": "f2b901c4-8842-4e42-b725-31d0f4b249ce",
+        "timestamp": "2024-08-01T16:33:30.202907",
+        "license_number": "JUK972]"
+    },
+    {
+        "id": "947ce660-9efb-4017-92b6-a4b623bf73da",
+        "timestamp": "2024-08-01T16:33:43.879611",
+        "license_number": null
+    },
+    {
+        "id": "6c59ae7d-47d1-4f8b-b357-22b07ab96bf2",
+        "timestamp": "2024-08-01T16:33:45.238931",
+        "license_number": "Juk972"
+    },
+    {
+        "id": "590ad8d1-cf9e-4d38-a5c1-00832a8f43e7",
+        "timestamp": "2024-08-01T16:34:00.249202",
+        "license_number": ""
+    },
+    {
+        "id": "ec95a8ca-7f86-4cff-95b4-f9322939ffdc",
+        "timestamp": "2024-08-01T16:34:13.157533",
+        "license_number": null
+    },
+    {
+        "id": "fc1e7bba-ba88-4243-a81f-2f2bdd0c5bdc",
+        "timestamp": "2024-08-01T16:34:14.575849",
+        "license_number": ""
+    },
+    {
+        "id": "f461e1f3-dd73-4beb-9fca-11b5cca76957",
+        "timestamp": "2024-08-01T16:34:28.066897",
+        "license_number": "W"
+    },
+    {
+        "id": "9a101ab2-76c3-4d11-8699-a2c1151a28b6",
+        "timestamp": "2024-08-01T16:34:41.011896",
+        "license_number": ""
+    },
+    {
+        "id": "eac07268-b339-44a1-a172-4ccd4a9ddbe1",
+        "timestamp": "2024-08-01T16:34:54.394051",
+        "license_number": "IBo6 F 5977"
+    },
+    {
+        "id": "73fd0750-d327-481c-aa28-79d32d12b8d8",
+        "timestamp": "2024-08-01T16:35:07.831011",
+        "license_number": "22 BH6517 A"
+    },
+    {
+        "id": "d4326b2f-3474-45f4-a201-e541482122df",
+        "timestamp": "2024-08-01T16:35:45.179971",
+        "license_number": null
+    },
+    {
+        "id": "6779281e-6194-4225-aa1e-7ffb218edc8c",
+        "timestamp": "2024-08-01T16:35:46.559286",
+        "license_number": "JUK972"
+    },
+    {
+        "id": "ca4dd6c0-803e-44e4-ab11-56be17e742a5",
+        "timestamp": "2024-08-01T16:35:59.920124",
+        "license_number": "Bo6 F 5977"
+    },
+    {
+        "id": "4e019a70-4e19-4252-b0a2-920840d9ae6e",
+        "timestamp": "2024-08-01T16:36:13.298578",
+        "license_number": "22 BH6517 A"
+    },
+    {
+        "id": "5320a9b8-15c3-4d49-8c38-892ade50bc97",
+        "timestamp": "2024-08-01T16:36:26.699492",
+        "license_number": "B 2228 HM"
+    },
+    {
+        "id": "1fcd9ffd-1c25-4788-9849-0b810721fa4b",
+        "timestamp": "2024-08-01T16:36:39.574080",
+        "license_number": "CARBONIO"
+    },
+    {
+        "id": "8173a09b-4ff1-4ecb-a245-137eb2d62ff9",
+        "timestamp": "2024-08-01T16:36:52.423353",
+        "license_number": "Tcc 444"
+    },
+    {
+        "id": "cb0d12ad-3e52-40c5-bcca-53065e24808d",
+        "timestamp": "2024-08-01T16:37:18.678627",
+        "license_number": null
+    },
+    {
+        "id": "72062ab5-7ef4-4ac0-b451-32f193b307e2",
+        "timestamp": "2024-08-01T16:37:19.635290",
+        "license_number": null
+    },
+    {
+        "id": "2d14d41c-e028-4c5d-b4d1-1a613dc79908",
+        "timestamp": "2024-08-01T16:37:20.557243",
+        "license_number": null
+    },
+    {
+        "id": "ff35b7b2-e04c-4a59-b94a-ac213f4e110a",
+        "timestamp": "2024-08-01T16:37:22.756882",
+        "license_number": null
+    },
+    {
+        "id": "04550519-c142-4758-ac0c-cdf09caa6a0a",
+        "timestamp": "2024-08-01T16:37:25.410075",
+        "license_number": null
     }
 ]

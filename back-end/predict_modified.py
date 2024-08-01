@@ -71,8 +71,6 @@ class DetectionPredictor(BasePredictor):
             frame = getattr(self.dataset, 'frame', 0)
 
         self.data_path = p
-        # save_path = str(self.save_dir / p.name)  # im.jpg
-        # self.txt_path = str(self.save_dir / 'labels' / p.stem) + ('' if self.dataset.mode == 'image' else f'_{frame}')
         log_string += '%gx%g ' % im.shape[2:]  # print string
         self.annotator = self.get_annotator(im0)
 
@@ -188,8 +186,8 @@ def get_result():
     return ((current_number != new_number) and (new_number is not None) and (not new_number.isspace()))
 
 
-if __name__ == "__main__":
-    print("predict page")
-    get_result()
+# if __name__ == "__main__":
+#     print("predict page")
+#     get_result()
 
 

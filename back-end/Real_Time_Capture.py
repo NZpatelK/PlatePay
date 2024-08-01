@@ -53,8 +53,11 @@ def capture():
 
             if output_value:
                 print("real time", output_value)
+                cap.release()
+                cv2.destroyAllWindows()
+                print("destory complete it")
                 break
 
-    cap.release()
-    cv2.destroyAllWindows()
-    print("destory complete it")
+    # cap.release()
+    # cv2.destroyAllWindows()
+    # print("destory complete it")
