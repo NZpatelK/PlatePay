@@ -3,5 +3,130 @@
         "id": "2bb30313-8d06-4944-86f4-652cfa7bdc6c",
         "timestamp": "2024-08-01T12:09:37.037555",
         "license_number": "ABC123"
+    },
+    {
+        "id": "3283227d-b94b-4f35-8564-50c5815e5cbe",
+        "timestamp": "2024-08-02T12:01:27.280603",
+        "license_number": null
+    },
+    {
+        "id": "bf269a27-c849-48a5-84f7-55dc4129356a",
+        "timestamp": "2024-08-02T12:01:28.589310",
+        "license_number": "mmunitv Servic"
+    },
+    {
+        "id": "9d208c54-1c34-4583-bfa9-813fcc6c12ee",
+        "timestamp": "2024-08-02T12:01:30.541532",
+        "license_number": "Imunity Service"
+    },
+    {
+        "id": "082f20e9-1faa-4b1e-a971-8ccd2c960764",
+        "timestamp": "2024-08-02T12:01:35.369624",
+        "license_number": null
+    },
+    {
+        "id": "4cb8e1f5-0d32-40eb-ac28-696c54a5c8e6",
+        "timestamp": "2024-08-02T12:01:36.365351",
+        "license_number": "mmunity Service"
+    },
+    {
+        "id": "56fbdcaf-4018-4f8b-8fa8-32fbf3688a75",
+        "timestamp": "2024-08-02T12:01:38.306994",
+        "license_number": "munity Service"
+    },
+    {
+        "id": "b635ff73-163b-4223-be70-272a5a880eac",
+        "timestamp": "2024-08-02T12:01:51.047649",
+        "license_number": "mmunity S"
+    },
+    {
+        "id": "3b10e7d5-0878-434a-b6a9-a33a8cf1a976",
+        "timestamp": "2024-08-02T12:03:01.176481",
+        "license_number": null
+    },
+    {
+        "id": "062eb04f-7a53-449d-999d-dac6e9be7401",
+        "timestamp": "2024-08-02T12:03:02.167247",
+        "license_number": "v \"ivla4"
+    },
+    {
+        "id": "a215b93b-c8e1-4bed-84dd-89fb5bebffd1",
+        "timestamp": "2024-08-02T12:03:06.166680",
+        "license_number": null
+    },
+    {
+        "id": "2306f8e2-dadb-4967-abed-537594c2f209",
+        "timestamp": "2024-08-02T12:03:07.077363",
+        "license_number": null
+    },
+    {
+        "id": "60a6c24b-c486-424f-8d18-7c67f9ca78c6",
+        "timestamp": "2024-08-02T12:03:08.174068",
+        "license_number": ""
+    },
+    {
+        "id": "c68ee266-28ba-431c-bd0a-1a72a692fae5",
+        "timestamp": "2024-08-02T12:03:11.564614",
+        "license_number": null
+    },
+    {
+        "id": "6a24482c-6a3d-4628-ad38-270c6f14cf87",
+        "timestamp": "2024-08-02T12:03:12.612845",
+        "license_number": null
+    },
+    {
+        "id": "8d0033b8-7e3e-477a-b2ad-1fc01467a75d",
+        "timestamp": "2024-08-02T12:03:13.791521",
+        "license_number": "mmunity Servic"
+    },
+    {
+        "id": "b0215aca-4ea5-4084-852a-48ae742f5795",
+        "timestamp": "2024-08-02T12:04:27.026431",
+        "license_number": "rommunity"
+    },
+    {
+        "id": "a5212839-d28d-4dc6-83ad-4239c243d1f3",
+        "timestamp": "2024-08-02T12:05:03.204725",
+        "license_number": null
+    },
+    {
+        "id": "2e10b652-f79f-422e-94c7-8f71da8afdcd",
+        "timestamp": "2024-08-02T12:05:04.153670",
+        "license_number": null
+    },
+    {
+        "id": "18a31503-ec5f-4a89-919f-3f7220e4dc47",
+        "timestamp": "2024-08-02T12:05:08.111275",
+        "license_number": null
+    },
+    {
+        "id": "ddcda6ec-79aa-4ec5-9f11-c65369bfe5ad",
+        "timestamp": "2024-08-02T12:05:09.087207",
+        "license_number": null
+    },
+    {
+        "id": "04392583-5e72-48c4-a61b-60fb7a2decf8",
+        "timestamp": "2024-08-02T12:05:10.646101",
+        "license_number": "It is an offence to misuse"
+    },
+    {
+        "id": "5e19b14c-de4a-45ee-9a97-e1624b330861",
+        "timestamp": "2024-08-02T14:49:20.613534",
+        "license_number": null
+    },
+    {
+        "id": "f9219055-4ae0-476d-9292-5acab271c9b0",
+        "timestamp": "2024-08-02T14:49:21.953688",
+        "license_number": "nmunitv Service"
+    },
+    {
+        "id": "f55325e2-a9b5-4b82-a8b6-85e2f1c10bff",
+        "timestamp": "2024-08-02T14:49:49.871067",
+        "license_number": null
+    },
+    {
+        "id": "065d905a-eefa-4e4d-ba77-c96f59abd9c9",
+        "timestamp": "2024-08-02T14:49:51.104175",
+        "license_number": "ervices"
     }
 ]

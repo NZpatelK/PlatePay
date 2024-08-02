@@ -11,20 +11,20 @@ app.config['SECRET_KEY'] = 'mysecret'
 socketio = SocketIO(app, cors_allowed_origins="http://localhost:5173")
 CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 
-@app.route('/api/data', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_data():
     Real_Time_Capture.capture()
     value = get_licence_plate()
     data = {"message": value}
     return jsonify(data)
 
-def background_thread():
-    while True:
-        socketio.sleep(10)  # Interval to fetch and emit new data
-        Real_Time_Capture.capture()
-        value = get_licence_plate()
-        data = {"message": value}
-        socketio.emit('new_data', data)
+@socketio.on('get_data')
+def handle_get_license_plate():
+    # Replace this with your specific data fetching logic
+    Real_Time_Capture.capture()
+    value = get_licence_plate()
+    data = {"message": value}
+    socketio.emit('new_data', data)
 
 @socketio.on('connect')
 def handle_connect():
@@ -57,7 +57,6 @@ def get_licence_plate():
 
 if __name__ == '__main__':
     print("start")
-    socketio.start_background_task(background_thread)
     socketio.run(app, port=5000)
 
 
