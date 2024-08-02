@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import socketIOClient from 'socket.io-client';
 import io from 'socket.io-client';
 import './App.css';
 import Welcome from './components/Welcome';
@@ -8,9 +6,12 @@ import Welcome from './components/Welcome';
 // const ENDPOINT = "http://127.0.0.1:5000"; // Flask server endpoint
 
 function App() {
-  const [message, setMessage] = useState("");
   const [name, setName] = useState("");
   const [numberPlate, setNumberPlate] = useState("");
+  const [balance, setBalance] = useState(0);
+
+  const debtLimit = -200;
+  const lowBalance = 50;
 
   // Connect to the Socket.IO server
   const socket = io('http://127.0.0.1:5000');
@@ -27,9 +28,9 @@ function App() {
     // Listen for the 'new_data' event
     socket.on('new_data', (data) => {
       console.log('New data received:', data);
-      setMessage(data.message); // Update state with the new data
-      setNumberPlate(data.numberPlate);
+      setNumberPlate(data.number_plate);
       setName(data.name);
+      setBalance(data.balance);
     });
 
     // Listen for the 'disconnect' event
@@ -47,12 +48,24 @@ function App() {
     socket.emit('get_data');
   };
 
+  const checkBalance = () => {
+    if (balance < debtLimit) {
+      alert("Insufficient balance");
+    }
+    else if (balance < lowBalance) {
+      alert("Balance is low");
+    } 
+    else {
+      alert("Balance is sufficient");
+    }
+  };
+
   return (
     <div>
       <h1 className='heading'>Patel Station</h1>
       <div className='box'>
-          {/* <h2>Number Plate: {message}</h2> */}
-          <Welcome name={name} numberPlate={numberPlate}/>
+          {!numberPlate && !name && <h2 className='heading'>Welcome</h2>}
+          {numberPlate && name && <Welcome name={name} numberPlate={numberPlate}/>}
           <button onClick={fetchData}>Fetch Data</button>
       </div>
     </div>

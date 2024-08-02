@@ -23,7 +23,10 @@ def handle_get_license_plate():
     # Replace this with your specific data fetching logic
     Real_Time_Capture.capture()
     value = get_licence_plate()
-    data = {"message": value}
+    data = {
+        "number_plate": value,
+        "name": "Patel"
+    }
     socketio.emit('new_data', data)
 
 @socketio.on('connect')

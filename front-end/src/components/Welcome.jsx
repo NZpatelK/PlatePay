@@ -1,18 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Welcome.css';
 import PropTypes from 'prop-types';
 
 const Welcome = ({ name, numberPlate }) => {
     // const [name, setName] = React.useState("");
     // const [numberPlate, setNumberPlate] = React.useState("");
-    const [inputOtp, setInputOtp] = React.useState("");
-    
-    const validOtp = 1234;
+    const [inputOtp, setInputOtp] = useState("");
 
+    const validOtp = 1234;
 
     return (
         <div>
-            <h1 className='welcome-header'>Welcome</h1>
             <div>
                <div className='welcome-heading'>
                     <h3>
@@ -30,6 +28,17 @@ const Welcome = ({ name, numberPlate }) => {
                     value={inputOtp}
                     onChange={(e) => setInputOtp(e.target.value)}
                 />
+                <button
+                    onClick={() => {
+                        if (inputOtp === validOtp) {
+                            alert("Welcome");
+                        } else {
+                            alert("Invalid OTP");
+                        }
+                    }}
+                >
+                    Verify
+                </button>
             </div>
         </div >
     );
