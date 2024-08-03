@@ -1,0 +1,26 @@
+.petrol-header{
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.petrol-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.petrol-type label {
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+
+}

@@ -2,13 +2,17 @@ import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import './App.css';
 import Welcome from './components/Welcome';
+import PetrolSelection from './components/PetrolSelection';
 
 // const ENDPOINT = "http://127.0.0.1:5000"; // Flask server endpoint
 
 function App() {
   const [name, setName] = useState("");
   const [numberPlate, setNumberPlate] = useState("");
+  const [petrolType, setPetrolType] = useState("");
   const [balance, setBalance] = useState(0);
+
+  const [isOtpValid, setIsOtpValid] = useState(false);
 
   const debtLimit = -200;
   const lowBalance = 50;
@@ -31,6 +35,7 @@ function App() {
       setNumberPlate(data.number_plate);
       setName(data.name);
       setBalance(data.balance);
+      setPetrolType(data.petrol_type);
     });
 
     // Listen for the 'disconnect' event
@@ -64,9 +69,11 @@ function App() {
     <div>
       <h1 className='heading'>Patel Station</h1>
       <div className='box'>
-          {!numberPlate && !name && <h2 className='heading'>Welcome</h2>}
-          {numberPlate && name && <Welcome name={name} numberPlate={numberPlate}/>}
-          <button onClick={fetchData}>Fetch Data</button>
+          {/* {!numberPlate && !name && <h2 className='heading'>Welcome</h2>}
+          {numberPlate && name && <Welcome name={name} numberPlate={numberPlate}/>} */}
+          {!isOtpValid && <Welcome name={name} numberPlate={numberPlate} isOtpValid={setIsOtpValid} />}
+          {isOtpValid && <PetrolSelection/>}
+          {/* <button onClick={fetchData}>Fetch Data</button> */}
       </div>
     </div>
   );
