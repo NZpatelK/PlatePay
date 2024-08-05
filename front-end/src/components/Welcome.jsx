@@ -52,7 +52,8 @@ const Welcome = ({ name, numberPlate, isOtpValid }) => {
 
 Welcome.propTypes = {
     numberPlate: PropTypes.string.isRequired, 
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    isOtpValid: PropTypes.func.isRequired
   };
 
 export default Welcome;

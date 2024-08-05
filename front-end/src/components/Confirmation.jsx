@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import './confirmation.css';
+import './Confirmation.css';
 
 const Confirmation = ({
     name,
@@ -8,14 +8,27 @@ const Confirmation = ({
     petrolType,
     selectedAmount,
     isComfirmed,
+    handleModalChange,
 }) => {
     return (
         <div className="confirmBox">
             <h1>Confirmation</h1>
-            <p className="name">{name} </p>
-            <p className="numberPlate">{numberPlate}</p>
-            <p className="petrolType">{petrolType}</p>
-            <p className="selectedAmount">Selected Amount: {selectedAmount === -1 ? "Full Tank" : selectedAmount}</p>
+            <div className="details">
+                <p className="name"> Name: {name} </p>
+                <p className="numberPlate"> Number Plate: {numberPlate}</p>
+
+                <div className="pertol-type changable">
+                    <p className="petrolType"> Petrol Type: {petrolType}</p>
+                    <button onClick={() => handleModalChange("petrol")}>Change</button>
+                </div>
+
+                <div className="amount changable">
+                    <p className="selectedAmount">Selected Amount: {selectedAmount === -1 ? "Full Tank" : selectedAmount}</p>
+                    <button onClick={() => handleModalChange("amount")}>Change</button>
+                </div>
+
+            </div>
+ 
             <div className='confirmation-button'>
                 <button onClick={() => isComfirmed(true)}>Confirm</button>
             </div>
@@ -30,6 +43,7 @@ Confirmation.propTypes = {
     balance: PropTypes.number.isRequired,
     selectedAmount: PropTypes.string.isRequired,
     isComfirmed: PropTypes.bool.isRequired,
+    handleModalChange: PropTypes.func.isRequired
 };
 
 export default Confirmation;

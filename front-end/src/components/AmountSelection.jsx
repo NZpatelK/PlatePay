@@ -27,7 +27,7 @@ const AmountSelection = ({ selectedAmount, handleAmountSelection, hasSelectedAmo
                     {isSelectedCustomAmount &&
                         <div className='amount-input'>
                             <input type="number" name="amount" placeholder="Amount" value={selectedAmount} onChange={handleChangeAmount} />
-                            <button onClick={() => (hasSelectedAmount(true))}>Submit</button>
+                            <button onClick={() => (hasSelectedAmount(false))}>Submit</button>
                         </div>      
                     }
                 </div>
