@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import './AmountSelection.css';
 import PropTypes from 'prop-types';
 
-const AmountSelection = ({ selectedAmount, handleAmountSelection }) => {
-    const [isChanged, setIsChanged] = useState(false);
+const AmountSelection = ({ selectedAmount, handleAmountSelection, hasSelectedAmount }) => {
+    const [isSelectedCustomAmount, setIsSelectedCustomAmount] = useState(false);
+
+    const handleChangeAmount = (event) => {
+        event.preventDefault();
+        handleAmountSelection(event.target.value);
+    }
+
 
     return (
         <div>
@@ -12,35 +18,19 @@ const AmountSelection = ({ selectedAmount, handleAmountSelection }) => {
                     Select your amount
                 </h3>
             </div>
-            {isChanged ?
-                <form className='amount-form'>
-                    <div className='amount-type'>
-                        <label>
-                            <input type="radio" name="amount" value="Full Tank" onChange={handleAmountSelection} />
-                            Full Tank
-                        </label>
-                        <br />
-                        <label>
-                            <input type="radio" name="amount" value="Custom Amount" onChange={handleAmountSelection} />
-                            Custom Amount
-                        </label>
-                    </div>
-                    <br />
-                    {selectedAmount === 'Custom Amount' ?
+                <div className='amount-form'>
+                    {!isSelectedCustomAmount && <div className='amount-type'>
+                        <button className='amount-button' onClick={() => setIsSelectedCustomAmount(true)}>Custom Amount</button>
+                        <button className='fullTank-button' >Full Tank</button>
+                    </div>}
+            
+                    {isSelectedCustomAmount &&
                         <div className='amount-input'>
-                            <input type="number" name="amount" placeholder="Amount" onChange={handleAmountSelection} />
-                        </div>
-                        :
-                        null
+                            <input type="number" name="amount" placeholder="Amount" value={selectedAmount} onChange={handleChangeAmount} />
+                            <button onClick={() => (hasSelectedAmount(true))}>Submit</button>
+                        </div>      
                     }
-                    <br />
-                    <button onClick={() => setIsChanged(false)}>Submit</button>
-                </form>
-
-                :
-
-                <button onClick={() => setIsChanged(true)}>Change</button>
-            }
+                </div>
         </div>
     );
 };

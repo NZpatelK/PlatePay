@@ -3,16 +3,21 @@ import io from 'socket.io-client';
 import './App.css';
 import Welcome from './components/Welcome';
 import PetrolSelection from './components/PetrolSelection';
+import AmountSelection from './components/AmountSelection';
 
 // const ENDPOINT = "http://127.0.0.1:5000"; // Flask server endpoint
 
 function App() {
-  const [name, setName] = useState("");
-  const [numberPlate, setNumberPlate] = useState("");
-  const [petrolType, setPetrolType] = useState("");
-  const [balance, setBalance] = useState(0);
+  const [name, setName] = useState("patel");
+  const [numberPlate, setNumberPlate] = useState("LAC123");
+  const [petrolType, setPetrolType] = useState("LPG");
+  const [balance, setBalance] = useState(150);
+  const [isComfirmed, setIsConfirmed] = useState(false);
+  const [hasSelectedAmount, setHasSelectedAmount] = useState(false);
+  const [selectedAmount, setSelectedAmount] = useState();
 
   const [isOtpValid, setIsOtpValid] = useState(false);
+  const [hasSelectedPetrol, setHasSelectedPetrol] = useState(false);
 
   const debtLimit = -200;
   const lowBalance = 50;
@@ -72,7 +77,8 @@ function App() {
           {/* {!numberPlate && !name && <h2 className='heading'>Welcome</h2>}
           {numberPlate && name && <Welcome name={name} numberPlate={numberPlate}/>} */}
           {!isOtpValid && <Welcome name={name} numberPlate={numberPlate} isOtpValid={setIsOtpValid} />}
-          {isOtpValid && <PetrolSelection/>}
+          {isOtpValid && !hasSelectedPetrol && <PetrolSelection selectedPetrol={petrolType} handlePetrolSelection={setPetrolType} hasSelectedPetrol={setHasSelectedPetrol}/>}
+          {hasSelectedPetrol && <AmountSelection selectedAmount={selectedAmount} handleAmountSelection={setSelectedAmount} hasSelectedAmount={setHasSelectedAmount} />}
           {/* <button onClick={fetchData}>Fetch Data</button> */}
       </div>
     </div>
