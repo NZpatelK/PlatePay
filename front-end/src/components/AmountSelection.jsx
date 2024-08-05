@@ -21,7 +21,7 @@ const AmountSelection = ({ selectedAmount, handleAmountSelection, hasSelectedAmo
                 <div className='amount-form'>
                     {!isSelectedCustomAmount && <div className='amount-type'>
                         <button className='amount-button' onClick={() => setIsSelectedCustomAmount(true)}>Custom Amount</button>
-                        <button className='fullTank-button' >Full Tank</button>
+                        <button className='fullTank-button' onClick={() => (handleAmountSelection(-1), hasSelectedAmount(true))} >Full Tank</button>
                     </div>}
             
                     {isSelectedCustomAmount &&
@@ -37,7 +37,8 @@ const AmountSelection = ({ selectedAmount, handleAmountSelection, hasSelectedAmo
 
 AmountSelection.propTypes = {
     selectedAmount: PropTypes.string.isRequired,
-    handleAmountSelection: PropTypes.func.isRequired
+    handleAmountSelection: PropTypes.func.isRequired,
+    hasSelectedAmount: PropTypes.func.isRequired
 };
 
 export default AmountSelection;

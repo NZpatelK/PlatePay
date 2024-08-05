@@ -4,6 +4,7 @@ import './App.css';
 import Welcome from './components/Welcome';
 import PetrolSelection from './components/PetrolSelection';
 import AmountSelection from './components/AmountSelection';
+import Confirmation from './components/Confirmation';
 
 // const ENDPOINT = "http://127.0.0.1:5000"; // Flask server endpoint
 
@@ -78,7 +79,9 @@ function App() {
           {numberPlate && name && <Welcome name={name} numberPlate={numberPlate}/>} */}
           {!isOtpValid && <Welcome name={name} numberPlate={numberPlate} isOtpValid={setIsOtpValid} />}
           {isOtpValid && !hasSelectedPetrol && <PetrolSelection selectedPetrol={petrolType} handlePetrolSelection={setPetrolType} hasSelectedPetrol={setHasSelectedPetrol}/>}
-          {hasSelectedPetrol && <AmountSelection selectedAmount={selectedAmount} handleAmountSelection={setSelectedAmount} hasSelectedAmount={setHasSelectedAmount} />}
+          {hasSelectedPetrol && !hasSelectedAmount && <AmountSelection selectedAmount={selectedAmount} handleAmountSelection={setSelectedAmount} hasSelectedAmount={setHasSelectedAmount} />}
+          {hasSelectedAmount && !isComfirmed && <Confirmation name={name} numberPlate={numberPlate} petrolType={petrolType} selectedAmount={selectedAmount} isComfirmed={setIsConfirmed}/>}
+
           {/* <button onClick={fetchData}>Fetch Data</button> */}
       </div>
     </div>
