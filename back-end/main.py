@@ -24,7 +24,9 @@ def get_data():
 def handle_get_license_plate():
     # Replace this with your specific data fetching logic
     count = 5
-    while count == 0:
+    car_detail = False
+    value = ""
+    while count > 0:
         Real_Time_Capture.capture()
         value = get_licence_plate()
         no_space_plate = value.replace(" ", "")
@@ -34,13 +36,16 @@ def handle_get_license_plate():
 
         count -= 1
 
-    data = {
-        "number_plate": value.upper(),
-        "name": car_detail["name"],
-        "balance": car_detail["balance"],
-        "petrol_type": car_detail["petrol_type"]
-    }
-    
+    data = generate_output_car_detail(car_detail, value, "recognized")
+    socketio.emit('new_data', data)
+
+
+@socketio.on("number_plate_input")
+def handle_get_number_plate(number_plate):
+    no_space_plate = number_plate.replace(" ", "")
+    car_detail = get_register_data(no_space_plate.upper())
+
+    data = generate_output_car_detail(car_detail, number_plate, "registered")
     socketio.emit('new_data', data)
 
 
@@ -89,6 +94,22 @@ def get_register_data(license_number):
             break
 
     return False
+
+
+def generate_output_car_detail(car_detail, number_plate, request_type):
+    if not car_detail:
+        data = {request_type: False}
+    else:
+        data = {
+            "number_plate": number_plate.upper(),
+            "name": car_detail["name"],
+            "balance": car_detail["balance"],
+            "petrol_type": car_detail["petrol_type"],
+            "recognized": "true",
+            "registered": "true"
+        }
+
+    return data
 
 
 if __name__ == '__main__':

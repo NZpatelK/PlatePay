@@ -16,8 +16,8 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(0,0,0,0.20);
   border-radius: 10px;
-  width: 500px;
-  height: 400px;
+  width: 600px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: top;
@@ -27,24 +27,29 @@ body {
 
 }
 
+.sub-box {
+  margin: 0 0 30px 0;
+}
+
 h3{ 
   color: #ffffff;
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: capitalize;
+  line-height: 2;
   margin: 0;
 }
 
 h5{
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-transform: capitalize;
   margin: 30px 0 10px 0;
 }
 
 input {
-  width: 100%;
+  width: 70%;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
@@ -54,23 +59,6 @@ input {
   text-align: center;
 }
 
-.submit {
-  background-color: #ffffff;
-  color: #222;
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 30px;
-  transition: all 0.5s ease-in-out;
-}
-
-.submit:hover {
-  background-color: #00ffe5;
-  transform: scale(1.1);
-}
 
 .plate-number {
   color: #ffffff;

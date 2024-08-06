@@ -50,10 +50,11 @@ function App() {
       setNumberPlate(data.number_plate);
       setName(data.name);
       setBalance(data.balance);
+      setSelectedAmount(data.default_amount);
       setPetrolType(data.petrol_type);
       setIsScanned(true);
-      setIsRecongized(true);
-      setIsRegistered(true);
+      setIsRecongized(data.recognized);
+      setIsRegistered(data.registered);
     });
 
     // Listen for the 'disconnect' event
@@ -72,7 +73,6 @@ function App() {
     setIsRecongized(false);
     setIsRegistered(false);
     setIsOtpValid(false);
-    socket.emit('get_data');
   };
 
   const completeProcess = () => {
@@ -81,11 +81,15 @@ function App() {
     setIsRegistered(false);
     setIsOtpValid(false);
 
-    socket.emit('get_data');
+    alert("Now you can pump the " + petrolType + " your car");
+    alert("Your remaining balance is " + (balance - selectedAmount));
 
-    // setTimeout(() => {
-    //   fetchData();
-    // }, 5000);
+    socket.emit('get_data');
+  }
+
+  const handleSumbitNumberPlate = () => {
+    console.log(numberPlate);
+    socket.emit('number_plate_input', numberPlate);
   }
 
 
@@ -111,9 +115,12 @@ function App() {
       ) : !isRecongized ? (
         <div className='box'>
           <h1>Welcome</h1>
-          <h3>Sorry we could not recognize your number plate.</h3>
-          <h3>Please enter your number plate</h3>
+          <div className='sub-box'>
+            <h3>Sorry, we could not recognize your number plate.</h3>
+            <h3>Please enter your number plate</h3>
+          </div>
           <input type="text" value={numberPlate} onChange={(e) => setNumberPlate(e.target.value)} />
+          <button onClick={() => handleSumbitNumberPlate()}>Submit</button>
         </div>
       )
         : !isRegistered ? (
@@ -137,7 +144,7 @@ function App() {
               <h3>Hi {name}, </h3>
               <h3>Your number plate: {numberPlate}</h3>
               <h3>Your balance is insiffucient.</h3>
-              <h3> Please top up through our app then we wil able to serve you</h3>
+              <h3> Please top up through our app then we will able to serve you</h3>
               <button onClick={handleGetData}>Exit</button>
             </div>}
     </div>

@@ -4,12 +4,14 @@
       "name": "Patel",
       "license_number": "RJ14CV0002",
       "balance": 500,
+      "default_amount": 100,
       "petrol_type": "Petrol"
     },
     {
       "name": "Jack",
       "license_number": "9ASF",
       "balance": 1000,
+      "default_amount": 300,
       "petrol_type": "Diesel"
 
     },
@@ -17,6 +19,7 @@
       "name": "Mike",
       "license_number": "KY70CWT",
       "balance": 20,
+      "default_amount": 60,
       "petrol_type": "LPG"
 
     },
@@ -24,6 +27,7 @@
       "name": "Rohan",
       "license_number": "CYJ421",
       "balance": -300,
+      "default_amount": 50,
       "petrol_type": "LPG"
 
     }

@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 50px auto;
-    width: 400px;
+    width: 500px;
 }
 
 .changable button {
@@ -18,7 +18,7 @@
     color: #ffffff;
     border: none;
     border-radius: 5px;
-    padding: 5px 30px;
+    padding: 10px 40px;
     margin: 0;
     cursor: pointer;
 }
