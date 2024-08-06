@@ -12,8 +12,8 @@ function App() {
   const [name, setName] = useState("patel");
   const [numberPlate, setNumberPlate] = useState("LAC123");
   const [petrolType, setPetrolType] = useState("LPG");
-  const [balance, setBalance] = useState(150);
-  const [selectedAmount, setSelectedAmount] = useState();
+  const [balance, setBalance] = useState(400);
+  const [selectedAmount, setSelectedAmount] = useState(0);
 
   // Validate 
   const [isOtpValid, setIsOtpValid] = useState(false);
@@ -62,17 +62,7 @@ function App() {
   //   socket.emit('get_data');
   // };
 
-  const checkBalance = () => {
-    if (balance < debtLimit) {
-      alert("Insufficient balance");
-    }
-    else if (balance < lowBalance) {
-      alert("Balance is low");
-    }
-    else {
-      alert("Balance is sufficient");
-    }
-  };
+
 
   const toggleModal = (modalType) => {
     if (modalType === 'petrol') {
@@ -84,16 +74,25 @@ function App() {
 
   return (
     <div>
-      <h1 className='heading'>Patel Station</h1>
-      <div className='box'>
+      <h1 className='heading'>Gas Patel</h1>
+      {balance > debtLimit ? <div className='box'>
         {!isOtpValid && <Welcome isOtpValid={setIsOtpValid} name={name} numberPlate={numberPlate} />}
-        {isOtpValid && !isAmountOpen && !isPetrolOpen && <Confirmation name={name} numberPlate={numberPlate} petrolType={petrolType} selectedAmount={selectedAmount} handleModalChange={toggleModal} isComfirmed={setIsComfirmed} />}
+        {isOtpValid && !isAmountOpen && !isPetrolOpen && <Confirmation petrolType={petrolType} selectedAmount={selectedAmount} handleModalChange={toggleModal} isComfirmed={setIsComfirmed} />}
 
-        {isPetrolOpen && <PetrolSelection handlePetrolSelection={setPetrolType} isPetrolOpen={setIsPetrolOpen} />}
-        {isAmountOpen && <AmountSelection selectedAmount={selectedAmount} handleAmountSelection={setSelectedAmount} hasSelectedAmount={setIsAmountOpen} />}
+        {isPetrolOpen && <PetrolSelection handlePetrolTypeSelection={setPetrolType} togglePetrolSelectionModal={setIsPetrolOpen} />}
+        {isAmountOpen && <AmountSelection selectedAmount={selectedAmount} onAmountSelection={setSelectedAmount} toggleAmountSelectionModal={setIsAmountOpen} />}
 
         {/* <button onClick={fetchData}>Fetch Data</button> */}
-      </div>
+      </div> :
+      
+      <div className='box'>
+        <h3>Hi {name}, </h3>
+        <h3>Your number plate: {numberPlate}</h3>
+        <h3>Your balance is insiffucient.</h3>
+        <h3> Please top up through our app then we wil able to serve you</h3>
+        
+
+      </div>}
     </div>
   );
 }

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import './Confirmation.css';
 
 const Confirmation = ({
-    name,
-    numberPlate,
     petrolType,
     selectedAmount,
     isComfirmed,
@@ -14,16 +12,13 @@ const Confirmation = ({
         <div className="confirmBox">
             <h1>Confirmation</h1>
             <div className="details">
-                <p className="name"> Name: {name} </p>
-                <p className="numberPlate"> Number Plate: {numberPlate}</p>
-
                 <div className="pertol-type changable">
-                    <p className="petrolType"> Petrol Type: {petrolType}</p>
+                    <h5 className="petrolType"> Petrol Type: {petrolType}</h5>
                     <button onClick={() => handleModalChange("petrol")}>Change</button>
                 </div>
 
                 <div className="amount changable">
-                    <p className="selectedAmount">Selected Amount: {selectedAmount === -1 ? "Full Tank" : selectedAmount}</p>
+                    <h5 className="selectedAmount">Selected Amount: {selectedAmount === -1 ? "Full Tank" : "$" + selectedAmount}</h5>
                     <button onClick={() => handleModalChange("amount")}>Change</button>
                 </div>
 
@@ -37,8 +32,6 @@ const Confirmation = ({
 };
 
 Confirmation.propTypes = {
-    name: PropTypes.string.isRequired,
-    numberPlate: PropTypes.string.isRequired,
     petrolType: PropTypes.string.isRequired,
     balance: PropTypes.number.isRequired,
     selectedAmount: PropTypes.string.isRequired,

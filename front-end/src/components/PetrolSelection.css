@@ -10,35 +10,20 @@
 
 .petrol-type {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 20px auto;
     width: 100%;
 }
 
-.petrol-type label {
+.petrol-type button {
     margin-right: 10px;
     font-weight: bold;
     font-size: 1.2rem;
     color: #ffffff;
     text-transform: uppercase;
-
+    padding: 10px 0 ;
+    width: 300px;
 }
 
-.pertol-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    width: 100%;
-}
-
-.pertol-button button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}

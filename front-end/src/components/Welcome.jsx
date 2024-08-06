@@ -32,9 +32,9 @@ const Welcome = ({ name, numberPlate, isOtpValid }) => {
                         Your number plate: {numberPlate}
                     </h3>
                </div>
-                <p className='otp'>
+                <h5 className='otp'>
                     Please enter your OTP
-                </p>
+                </h5>
                 <input
                     type="number"
                     value={inputOtp}
