@@ -67,9 +67,13 @@ function App() {
     };
   }, []);
 
-  // const fetchData = () => {
-  //   socket.emit('get_data');
-  // };
+  const handleGetData = () => {
+    setIsScanned(false);
+    setIsRecongized(false);
+    setIsRegistered(false);
+    setIsOtpValid(false);
+    socket.emit('get_data');
+  };
 
   const completeProcess = () => {
     setIsScanned(false);
@@ -134,7 +138,7 @@ function App() {
               <h3>Your number plate: {numberPlate}</h3>
               <h3>Your balance is insiffucient.</h3>
               <h3> Please top up through our app then we wil able to serve you</h3>
-
+              <button onClick={handleGetData}>Exit</button>
             </div>}
     </div>
   );
