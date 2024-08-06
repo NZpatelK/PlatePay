@@ -11,6 +11,7 @@ app.config['SECRET_KEY'] = 'mysecret'
 socketio = SocketIO(app, cors_allowed_origins="http://localhost:5173")
 CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 
+
 @app.route('/', methods=['GET'])
 def get_data():
     Real_Time_Capture.capture()
@@ -18,21 +19,36 @@ def get_data():
     data = {"message": value}
     return jsonify(data)
 
+
 @socketio.on('get_data')
 def handle_get_license_plate():
     # Replace this with your specific data fetching logic
-    Real_Time_Capture.capture()
-    value = get_licence_plate()
+    count = 5
+    while count == 0:
+        Real_Time_Capture.capture()
+        value = get_licence_plate()
+        no_space_plate = value.replace(" ", "")
+        car_detail = get_register_data(no_space_plate.upper())
+        if car_detail:
+            break
+
+        count -= 1
+
     data = {
-        "number_plate": value,
-        "name": "Patel"
+        "number_plate": value.upper(),
+        "name": car_detail["name"],
+        "balance": car_detail["balance"],
+        "petrol_type": car_detail["petrol_type"]
     }
+    
     socketio.emit('new_data', data)
+
 
 @socketio.on('connect')
 def handle_connect():
     print('Client connected')
     socketio.emit('message', 'Connected to the server!')
+
 
 @socketio.on('disconnect')
 def handle_disconnect():
@@ -58,14 +74,23 @@ def get_licence_plate():
         return None
 
 
+def get_register_data(license_number):
+    # Load JSON data from a file
+    with open('registed.json', 'r') as file:
+        data = json.load(file)
+
+    # Define the username to search for
+    search_username = "bob"
+
+    # Check if the username exists in the JSON data
+    for user in data['cars']:
+        if user['license_number'] == license_number:
+            return user
+            break
+
+    return False
+
+
 if __name__ == '__main__':
     print("start")
     socketio.run(app, port=5000)
-
-
-
-
-
-
-
-

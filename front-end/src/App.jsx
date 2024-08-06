@@ -9,17 +9,17 @@ import Confirmation from './components/Confirmation';
 // const ENDPOINT = "http://127.0.0.1:5000"; // Flask server endpoint
 
 function App() {
-  const [name, setName] = useState("patel");
-  const [petrolType, setPetrolType] = useState("LPG");
-  const [balance, setBalance] = useState(400);
+  const [name, setName] = useState("");
+  const [petrolType, setPetrolType] = useState("");
+  const [balance, setBalance] = useState(0);
   const [selectedAmount, setSelectedAmount] = useState(0);
 
 
   //number plate
   const [numberPlate, setNumberPlate] = useState("");
-  const [isScanned, setIsScanned] = useState(true);
-  const [isRecongized, setIsRecongized] = useState(true);
-  const [isRegistered, setIsRegistered] = useState(true);
+  const [isScanned, setIsScanned] = useState(false);
+  const [isRecongized, setIsRecongized] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
 
   // Validate 
   const [isOtpValid, setIsOtpValid] = useState(false);
@@ -51,6 +51,9 @@ function App() {
       setName(data.name);
       setBalance(data.balance);
       setPetrolType(data.petrol_type);
+      setIsScanned(true);
+      setIsRecongized(true);
+      setIsRegistered(true);
     });
 
     // Listen for the 'disconnect' event
@@ -64,12 +67,12 @@ function App() {
     };
   }, []);
 
-  const fetchData = () => {
-    socket.emit('get_data');
-  };
+  // const fetchData = () => {
+  //   socket.emit('get_data');
+  // };
 
   const completeProcess = () => {
-    isScanned(false);
+    setIsScanned(false);
     setIsRecongized(false);
     setIsRegistered(false);
     setIsOtpValid(false);
@@ -119,7 +122,7 @@ function App() {
           :
           balance > debtLimit ? <div className='box'>
             {!isOtpValid && <Welcome isOtpValid={setIsOtpValid} name={name} numberPlate={numberPlate} />}
-            {isOtpValid && !isAmountOpen && !isPetrolOpen && <Confirmation petrolType={petrolType} selectedAmount={selectedAmount} handleModalChange={toggleModal} isComfirmed={setIsComfirmed} />}
+            {isOtpValid && !isAmountOpen && !isPetrolOpen && <Confirmation petrolType={petrolType} selectedAmount={selectedAmount} handleModalChange={toggleModal} isComfirmed={completeProcess} />}
 
             {isPetrolOpen && <PetrolSelection handlePetrolTypeSelection={setPetrolType} togglePetrolSelectionModal={setIsPetrolOpen} />}
             {isAmountOpen && <AmountSelection selectedAmount={selectedAmount} onAmountSelection={setSelectedAmount} toggleAmountSelectionModal={setIsAmountOpen} />}
@@ -131,7 +134,6 @@ function App() {
               <h3>Your number plate: {numberPlate}</h3>
               <h3>Your balance is insiffucient.</h3>
               <h3> Please top up through our app then we wil able to serve you</h3>
-
 
             </div>}
     </div>

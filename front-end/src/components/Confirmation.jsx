@@ -25,7 +25,7 @@ const Confirmation = ({
             </div>
  
             <div className='confirmation-button'>
-                <button onClick={() => isComfirmed(true)}>Confirm</button>
+                <button onClick={() => isComfirmed()}>Confirm</button>
             </div>
         </div>
     );
