@@ -6,149 +6,149 @@ import PetrolSelection from './components/PetrolSelection';
 import AmountSelection from './components/AmountSelection';
 import Confirmation from './components/Confirmation';
 
+// const ENDPOINT = "http://127.0.0.1:5000"; // Flask server endpoint
 
 function App() {
-  const [userData, setUserData] = useState({
-    name: "",
-    petrolType: "",
-    balance: 0,
-    amount: 0,
-    numberPlate: "",
-    isScanned: true,
-    isRecognized: true,
-    isRegistered: true,
-    isOtpValid: true,
-    isPetrolModalOpen: false,
-    isAmountModalOpen: false,
-  });
+  const [name, setName] = useState("");
+  const [petrolType, setPetrolType] = useState("");
+  const [balance, setBalance] = useState(0);
+  const [amount, setAmount] = useState(0);
+
+
+  //number plate
+  const [numberPlate, setNumberPlate] = useState("");
+  const [isScanned, setIsScanned] = useState(false);
+  const [isRecongized, setIsRecongized] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
+
+  // Validate 
+  const [isOtpValid, setIsOtpValid] = useState(false);
+  const [isPetrolOpen, setIsPetrolOpen] = useState(false);
+  const [isAmountOpen, setIsAmountOpen] = useState(false);
+
 
   const debtLimit = -200;
+  // const lowBalance = 50;
 
+  // Connect to the Socket.IO server
   const socket = io('http://127.0.0.1:5000');
 
   useEffect(() => {
-    const socket = io('http://127.0.0.1:5000');
-    const handleNewData = (newData) => {
-      setUserData((prevData) => ({ ...prevData, ...newData, isScanned: true }));
-    };
 
+    const socket = io('http://127.0.0.1:5000');
+    // Listen for the 'connect' event
     socket.on('connect', () => {
-      socket.emit('get_data');
+      console.log('Connected to server');
+      socket.emit('get_data'); // Request data from the server
     });
 
-    socket.on('new_data', handleNewData);
+    // Listen for the 'new_data' event
+    socket.on('new_data', (data) => {
+      console.log('New data received:', data);
+      setNumberPlate(data.number_plate);
+      setName(data.name);
+      setBalance(data.balance);
+      setAmount(data.default_amount);
+      setPetrolType(data.petrol_type);
+      setIsScanned(true);
+      setIsRecongized(data.recognized);
+      setIsRegistered(data.registered);
+    });
 
+    // Listen for the 'disconnect' event
+    socket.on('disconnect', () => {
+      console.log('Disconnected from server');
+    });
+
+    // Cleanup on component unmount
     return () => {
       socket.disconnect();
     };
   }, []);
 
-  const getData = async () => {
-    await new Promise((resolve) => {
-      socket.emit('get_data', resolve);
-    });
+  const handleGetData = () => {
+    setIsScanned(false);
+    setIsRecongized(false);
+    setIsRegistered(false);
+    setIsOtpValid(false);
   };
 
-  const handleSubmitNumberPlate = async (numberPlate) => {
+  const completeProcess = () => {
+    setIsScanned(false);
+    setIsRecongized(false);
+    setIsRegistered(false);
+    setIsOtpValid(false);
+
+    alert("Now you can pump the " + petrolType + " your car");
+    alert("Your remaining balance is " + (balance - amount));
+
+    socket.emit('get_data');
+  }
+
+  const handleSumbitNumberPlate = () => {
+    console.log(numberPlate);
     socket.emit('number_plate_input', numberPlate);
-  };
+  }
+
+
 
   const toggleModal = (modalType) => {
-    if (modalType === "petrol") {
-      setUserData((prevData) => ({
-        ...prevData,
-        isPetrolModalOpen: !prevData.isPetrolModalOpen,
-      }));
-    } else if (modalType === "amount") {
-      setUserData((prevData) => ({
-        ...prevData,
-        isAmountModalOpen: !prevData.isAmountModalOpen,
-      }));
+    if (modalType === 'petrol') {
+      setIsPetrolOpen(!isPetrolOpen);
+    } else if (modalType === 'amount') {
+      setIsAmountOpen(!isAmountOpen);
     }
-  };
-
-  const completeProcess = async () => {
-    setUserData((prevData) => ({
-      ...prevData,
-      isScanned: false,
-      isOtpValid: false,
-      isPetrolModalOpen: false,
-      isAmountModalOpen: false,
-    }));
-
-    alert(`Now you can pump the ${userData.petrolType} in your car`);
-    alert(`Your remaining balance is ${userData.balance - userData.amount}`);
-
-    await getData();
-  };
+  }
 
   return (
     <div>
-      <h1 className="heading">Gas Patel</h1>
+      <h1 className='heading'>Gas Patel</h1>
 
-      {!userData.isScanned ? (
-        <div className="box">
+      {!isScanned ? (
+        <div className='box'>
           <h1>Welcome</h1>
           <h3>We are currently scanning your number plate.</h3>
-          <h3>Please wait...</h3>
+          <h3>Please wait.....</h3>
         </div>
-      ) : !userData.isRecognized ? (
-        <div className="box">
+      ) : !isRecongized ? (
+        <div className='box'>
           <h1>Welcome</h1>
-          <div className="sub-box">
+          <div className='sub-box'>
             <h3>Sorry, we could not recognize your number plate.</h3>
             <h3>Please enter your number plate</h3>
           </div>
-          <input
-            type="text"
-            value={userData.numberPlate}
-            onChange={(e) => setUserData((prevData) => ({ ...prevData, numberPlate: e.target.value }))}
-          />
-          <button onClick={() => handleSubmitNumberPlate(userData.numberPlate)}>Submit</button>
+          <input type="text" value={numberPlate} onChange={(e) => setNumberPlate(e.target.value)} />
+          <button onClick={() => handleSumbitNumberPlate()}>Submit</button>
         </div>
-      ) : !userData.isRegistered ? (
-        <div className="box">
-          <h1>Welcome</h1>
-          <h3>Sorry, you are not registered at our system.</h3>
-          <h3>Please download our app and register it.</h3>
-          <button onClick={getData}>Exit</button>
-        </div>
-      ) : userData.balance > debtLimit ? (
-        <div className="box">
-          {!userData.isOtpValid && (
-            <Welcome
-              isOtpValid={(isValid) => setUserData((prevData) => ({ ...prevData, isOtpValid: isValid }))}
-              name={userData.name}
-              numberPlate={userData.numberPlate}
-            />
-          )}
-          {userData.isOtpValid && !userData.isPetrolModalOpen && !userData.isAmountModalOpen && (
-            <Confirmation
-              petrolType={userData.petrolType}
-              amount={userData.amount}
-              handleModalChange={toggleModal}
-              isConfirmed={completeProcess}
-            />
-          )}
+      )
+        : !isRegistered ? (
+          <div className='box'>
+            <h1>Welcome</h1>
+            <h3>Sorry you are not registered at our system.</h3>
+            <h3>Please download our app and register it.</h3>
+            <button onClick={handleGetData}>Exit</button>
+          </div>
+        )
+          :
+          balance > debtLimit ? <div className='box'>
+            {!isOtpValid && <Welcome isOtpValid={setIsOtpValid} name={name} numberPlate={numberPlate} />}
+            {isOtpValid && !isAmountOpen && !isPetrolOpen && <Confirmation petrolType={petrolType} amount={amount} handleModalChange={toggleModal} isComfirmed={completeProcess} />}
 
-          {userData.isPetrolModalOpen && (
-            <PetrolSelection handlePetrolTypeSelection={(petrolType) => setUserData((prevData) => ({ ...prevData, petrolType }))} togglePetrolSelectionModal={toggleModal} />
-          )}
-          {userData.isAmountModalOpen && (
-            <AmountSelection amount={userData.amount} onAmountSelection={(amount) => setUserData((prevData) => ({ ...prevData, amount }))} toggleAmountSelectionModal={toggleModal} />
-          )}
-        </div>
-      ) : (
-        <div className="box">
-          <h3>Hi {userData.name}, </h3>
-          <h3>Your number plate: {userData.numberPlate}</h3>
-          <h3>Your balance is insufficient.</h3>
-          <h3>Please top up through our app then we will be able to serve you</h3>
-          <button onClick={getData}>Exit</button>
-        </div>
-      )}
+            {isPetrolOpen && <PetrolSelection handlePetrolTypeSelection={setPetrolType} toggleModal={toggleModal} />}
+            {isAmountOpen && <AmountSelection amount={amount} onAmountSelection={setAmount} toggleModal={toggleModal} />}
+
+          </div> :
+
+            <div className='box'>
+              <h3>Hi {name}, </h3>
+              <h3>Your number plate: {numberPlate}</h3>
+              <h3>Your balance is insiffucient.</h3>
+              <h3> Please top up through our app then we will able to serve you</h3>
+              <button onClick={handleGetData}>Exit</button>
+            </div>}
     </div>
   );
-}
-
+}  
+    
+  
 export default App;

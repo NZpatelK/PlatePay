@@ -3,13 +3,13 @@ import './PetrolSelection.css';
 import PropTypes from 'prop-types';
 
 
-const PetrolSelection = ({ handlePetrolTypeSelection, togglePetrolSelectionModal }) => {
+const PetrolSelection = ({ handlePetrolTypeSelection, toggleModal }) => {
   const petrolTypes = ['91', '95', '98', 'Diesel', 'LPG'];
 
   const handleOnClick = (petrolType) => (event) => {
     event.preventDefault();
     handlePetrolTypeSelection(petrolType);
-    togglePetrolSelectionModal("petrol");
+    toggleModal("petrol");
   };
 
   return (
@@ -50,7 +50,7 @@ const getPetrolColor = (petrolType) => {
 PetrolSelection.propTypes = {
     selectedPetrol: PropTypes.string.isRequired,
     handlePetrolTypeSelection: PropTypes.func.isRequired,
-    togglePetrolSelectionModal: PropTypes.func.isRequired
+    toggleModal: PropTypes.func.isRequired
 };
 
 export default PetrolSelection;

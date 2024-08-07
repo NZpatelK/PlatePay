@@ -3,7 +3,7 @@ import './AmountSelection.css';
 import PropTypes from 'prop-types';
 
 
-const AmountSelection = ({ Amount, onAmountSelection, toggleAmountSelectionModal }) => {
+const AmountSelection = ({ Amount, onAmountSelection, toggleModal }) => {
   const [isCustomAmountSelected, setCustomAmountSelected] = useState(false);
 
   const handleAmountChange = (event) => {
@@ -14,7 +14,7 @@ const AmountSelection = ({ Amount, onAmountSelection, toggleAmountSelectionModal
   const handleFullTank = (event) => {
     event.preventDefault();
     onAmountSelection(-1);
-    toggleAmountSelectionModal("amount");
+    toggleModal("amount");
   };
 
   return (
@@ -48,7 +48,7 @@ const AmountSelection = ({ Amount, onAmountSelection, toggleAmountSelectionModal
               value={Amount}
               onChange={handleAmountChange}
             />
-            <button onClick={() => toggleAmountSelectionModal("amount")}>Submit</button>
+            <button onClick={() => toggleModal("amount")}>Submit</button>
           </div>
         )}
       </div>
@@ -59,7 +59,7 @@ const AmountSelection = ({ Amount, onAmountSelection, toggleAmountSelectionModal
 AmountSelection.propTypes = {
     Amount: PropTypes.string.isRequired,
     onAmountSelection: PropTypes.func.isRequired,
-    toggleAmountSelectionModal: PropTypes.func.isRequired
+    toggleModal: PropTypes.func.isRequired
 };
 
 export default AmountSelection;
