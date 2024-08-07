@@ -3,22 +3,18 @@ import './Welcome.css';
 import PropTypes from 'prop-types';
 
 const Welcome = ({ name, numberPlate, isOtpValid }) => {
-    // const [name, setName] = React.useState("");
-    // const [numberPlate, setNumberPlate] = React.useState("");
     const [inputOtp, setInputOtp] = useState("");
 
-    const validOtp = 1234;
-    
     const handleOtp = (e) => {
         e.preventDefault();
 
-        const regex = new RegExp(`^${validOtp}$`);
-        if (regex.test(inputOtp)) {
+        if (inputOtp === "1234") {
             isOtpValid(true);
-            alert("Valid OTP");
         } else {
             alert("Invalid OTP");
         }
+
+        setInputOtp("");
     }
 
     return (
@@ -39,6 +35,7 @@ const Welcome = ({ name, numberPlate, isOtpValid }) => {
                     type="number"
                     value={inputOtp}
                     onChange={(e) => setInputOtp(e.target.value)}
+                    onKeyDown={(e) => e.key === "Enter" && handleOtp(e)}
                 />
                 <button
                     onClick={handleOtp}

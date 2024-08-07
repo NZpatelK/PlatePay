@@ -1,31 +1,50 @@
-import React, { useState } from 'react';
+
 import './PetrolSelection.css';
 import PropTypes from 'prop-types';
 
 
 const PetrolSelection = ({ handlePetrolTypeSelection, togglePetrolSelectionModal }) => {
+  const petrolTypes = ['91', '95', '98', 'Diesel', 'LPG'];
 
-    const handleOnClick = (event) => {
-        event.preventDefault();
-        handlePetrolTypeSelection(event.target.textContent);
-        togglePetrolSelectionModal(false);
-    };
-    return (
-        <div>
-            <div className='petrol-header'>
-                <h3>Select your petrol type</h3>
-            </div>
+  const handleOnClick = (petrolType) => (event) => {
+    event.preventDefault();
+    handlePetrolTypeSelection(petrolType);
+    togglePetrolSelectionModal(false);
+  };
 
-            <form className='petrol-form'>
-                <div className='petrol-type'>
-                    <button onClick={handleOnClick}>Petrol</button>
-                    <button onClick={handleOnClick}>Diesel</button>
-                    <button onClick={handleOnClick}>LPG</button>
-                    <button onClick={handleOnClick}>CNG</button>
-                </div>
-            </form>
+  return (
+    <div>
+      <div className='petrol-header'>
+        <h3>Select your petrol type</h3>
+      </div>
+
+      <form className='petrol-form'>
+        <div className='petrol-type'>
+          {petrolTypes.map((petrolType) => (
+            <button
+              key={petrolType}
+              onClick={handleOnClick(petrolType)}
+              style={{ background: getPetrolColor(petrolType) }}
+            >
+              {petrolType}
+            </button>
+          ))}
         </div>
-    );
+      </form>
+    </div>
+  );
+};
+
+const getPetrolColor = (petrolType) => {
+  const colors = {
+    '91': '#008000',
+    '95': '#FFD700',
+    '98': '#FF0000',
+    Diesel: '#000000',
+    LPG: '#0000FF',
+  };
+
+  return colors[petrolType] || '#000000';
 };
 
 PetrolSelection.propTypes = {

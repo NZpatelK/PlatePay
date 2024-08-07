@@ -3,10 +3,10 @@ import './AmountSelection.css';
 import PropTypes from 'prop-types';
 
 
-const AmountSelection = ({ selectedAmount, onAmountSelection, toggleAmountSelectionModal }) => {
-  const [isCustomAmountSelected, setIsCustomAmountSelected] = useState(false);
+const AmountSelection = ({ Amount, onAmountSelection, toggleAmountSelectionModal }) => {
+  const [isCustomAmountSelected, setCustomAmountSelected] = useState(false);
 
-  const handleChangeAmount = (event) => {
+  const handleAmountChange = (event) => {
     event.preventDefault();
     onAmountSelection(event.target.value);
   };
@@ -27,7 +27,7 @@ const AmountSelection = ({ selectedAmount, onAmountSelection, toggleAmountSelect
           <div className="amount-type">
             <button
               className="amount-button"
-              onClick={() => setIsCustomAmountSelected(true)}
+              onClick={() => setCustomAmountSelected(true)}
             >
               Custom Amount
             </button>
@@ -45,8 +45,8 @@ const AmountSelection = ({ selectedAmount, onAmountSelection, toggleAmountSelect
               type="number"
               name="amount"
               placeholder="Amount"
-              value={selectedAmount}
-              onChange={handleChangeAmount}
+              value={Amount}
+              onChange={handleAmountChange}
             />
             <button onClick={() => toggleAmountSelectionModal(false)}>Submit</button>
           </div>
@@ -57,7 +57,7 @@ const AmountSelection = ({ selectedAmount, onAmountSelection, toggleAmountSelect
 };
 
 AmountSelection.propTypes = {
-    selectedAmount: PropTypes.string.isRequired,
+    Amount: PropTypes.string.isRequired,
     onAmountSelection: PropTypes.func.isRequired,
     toggleAmountSelectionModal: PropTypes.func.isRequired
 };

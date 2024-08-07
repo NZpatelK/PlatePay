@@ -2,10 +2,10 @@
   "cars": [
     {
       "name": "Patel",
-      "license_number": "RJ14CV0002",
+      "license_number": "MH12DE1433",
       "balance": 500,
       "default_amount": 100,
-      "petrol_type": "Petrol"
+      "petrol_type": "91"
     },
     {
       "name": "Jack",
@@ -17,15 +17,15 @@
     },
     {
       "name": "Mike",
-      "license_number": "KY70CWT",
+      "license_number": "MAH41",
       "balance": 20,
       "default_amount": 60,
-      "petrol_type": "LPG"
+      "petrol_type": "98"
 
     },
     {
       "name": "Rohan",
-      "license_number": "CYJ421",
+      "license_number": "SBP1818T",
       "balance": -300,
       "default_amount": 50,
       "petrol_type": "LPG"

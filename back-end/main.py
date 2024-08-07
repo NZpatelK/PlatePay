@@ -23,7 +23,7 @@ def get_data():
 @socketio.on('get_data')
 def handle_get_license_plate():
     # Replace this with your specific data fetching logic
-    count = 5
+    count = 3
     car_detail = False
     value = ""
     while count > 0:
@@ -36,7 +36,8 @@ def handle_get_license_plate():
 
         count -= 1
 
-    data = generate_output_car_detail(car_detail, value, "recognized")
+    request_type = {"recognized": False}
+    data = generate_output_car_detail(car_detail, value, request_type )
     socketio.emit('new_data', data)
 
 
@@ -45,7 +46,9 @@ def handle_get_number_plate(number_plate):
     no_space_plate = number_plate.replace(" ", "")
     car_detail = get_register_data(no_space_plate.upper())
 
-    data = generate_output_car_detail(car_detail, number_plate, "registered")
+    request_type = {"registered": False, "recognized": True}
+
+    data = generate_output_car_detail(car_detail, number_plate, request_type)
     socketio.emit('new_data', data)
 
 
@@ -98,12 +101,13 @@ def get_register_data(license_number):
 
 def generate_output_car_detail(car_detail, number_plate, request_type):
     if not car_detail:
-        data = {request_type: False}
+        data = request_type
     else:
         data = {
             "number_plate": number_plate.upper(),
             "name": car_detail["name"],
             "balance": car_detail["balance"],
+            "default_amount": car_detail["default_amount"],
             "petrol_type": car_detail["petrol_type"],
             "recognized": "true",
             "registered": "true"
