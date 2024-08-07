@@ -4,11 +4,11 @@ import './Confirmation.css';
 
 const Confirmation = ({
     petrolType,
-    Amount,
+    amount,
     isComfirmed,
     handleModalChange,
 }) => {
-    const fullTankText = Amount === -1 ? "Full Tank" : `$${Amount}`;
+    const fullTankText = amount === -1 ? "Full Tank" : `$${amount}`;
 
     return (
         <div className="confirmBox">
@@ -22,8 +22,8 @@ const Confirmation = ({
                 </div>
 
                 <div className="amount changable">
-                    <h5 className="Amount">
-                        Selected Amount: {fullTankText}
+                    <h5 className="amount">
+                        Selected amount: {fullTankText}
                     </h5>
                     <button onClick={() => handleModalChange("amount")}>Change</button>
                 </div>
@@ -40,7 +40,7 @@ const Confirmation = ({
 Confirmation.propTypes = {
     petrolType: PropTypes.string.isRequired,
     balance: PropTypes.number.isRequired,
-    Amount: PropTypes.string.isRequired,
+    amount: PropTypes.string.isRequired,
     isComfirmed: PropTypes.bool.isRequired,
     handleModalChange: PropTypes.func.isRequired
 };

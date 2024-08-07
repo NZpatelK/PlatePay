@@ -8,104 +8,91 @@ import Confirmation from './components/Confirmation';
 
 
 function App() {
-  const [user, setUser] = useState({
+  const [userData, setUserData] = useState({
     name: "",
-    numberPlate: "",
-    balance: 0,
-    defaultAmount: 0,
     petrolType: "",
-    isScanned: false,
-    isRecognized: false,
-    isRegistered: false,
-    isOtpValid: false,
-    isPetrolSelectionOpen: false,
-    isAmountSelectionOpen: false,
+    balance: 0,
+    amount: 0,
+    numberPlate: "",
+    isScanned: true,
+    isRecognized: true,
+    isRegistered: true,
+    isOtpValid: true,
+    isPetrolModalOpen: false,
+    isAmountModalOpen: false,
   });
 
   const debtLimit = -200;
 
-  const socket = io("http://127.0.0.1:5000");
+  const socket = io('http://127.0.0.1:5000');
 
   useEffect(() => {
-    socket.on("connect", () => {
-      socket.emit("get_data");
+    const socket = io('http://127.0.0.1:5000');
+    const handleNewData = (newData) => {
+      setUserData((prevData) => ({ ...prevData, ...newData, isScanned: true }));
+    };
+
+    socket.on('connect', () => {
+      socket.emit('get_data');
     });
 
-    socket.on("new_data", (data) => {
-      setUser((prevUser) => ({
-        ...prevUser,
-        ...data,
-        isScanned: true,
-        isRecognized: data.recognized,
-        isRegistered: data.registered,
-      }));
-    });
-
-    socket.on("disconnect", () => {
-      console.log("Disconnected from server");
-    });
+    socket.on('new_data', handleNewData);
 
     return () => {
       socket.disconnect();
     };
   }, []);
 
-  const handleGetData = () => {
-    setUser((prevUser) => ({
-      ...prevUser,
-      isScanned: false,
-      isRecognized: false,
-      isRegistered: false,
-      isOtpValid: false,
-    }));
-
-    socket.emit("get_data");
+  const getData = async () => {
+    await new Promise((resolve) => {
+      socket.emit('get_data', resolve);
+    });
   };
 
-  const completeProcess = () => {
-    setUser((prevUser) => ({
-      ...prevUser,
-      isScanned: false,
-      isRecognized: false,
-      isRegistered: false,
-      isOtpValid: false,
-    }));
-
-    alert(`Now you can pump ${user.petrolType} in your car`);
-    alert(`Your remaining balance is ${user.balance - user.defaultAmount}`);
-
-    socket.emit("get_data");
-  };
-
-  const handleSubmitNumberPlate = (numberPlate) => {
-    socket.emit("number_plate_input", numberPlate);
+  const handleSubmitNumberPlate = async (numberPlate) => {
+    socket.emit('number_plate_input', numberPlate);
   };
 
   const toggleModal = (modalType) => {
     if (modalType === "petrol") {
-      setUser((prevUser) => ({
-        ...prevUser,
-        isPetrolSelectionOpen: !prevUser.isPetrolSelectionOpen,
+      setUserData((prevData) => ({
+        ...prevData,
+        isPetrolModalOpen: !prevData.isPetrolModalOpen,
       }));
     } else if (modalType === "amount") {
-      setUser((prevUser) => ({
-        ...prevUser,
-        isAmountSelectionOpen: !prevUser.isAmountSelectionOpen,
+      setUserData((prevData) => ({
+        ...prevData,
+        isAmountModalOpen: !prevData.isAmountModalOpen,
       }));
     }
+  };
+
+  const completeProcess = async () => {
+    setUserData((prevData) => ({
+      ...prevData,
+      isScanned: false,
+      isOtpValid: false,
+      isPetrolModalOpen: false,
+      isAmountModalOpen: false,
+    }));
+
+    alert(`Now you can pump the ${userData.petrolType} in your car`);
+    alert(`Your remaining balance is ${userData.balance - userData.amount}`);
+
+    await getData();
   };
 
   return (
     <div>
       <h1 className="heading">Gas Patel</h1>
 
-      {!user.isScanned ? (
+      {!userData.isScanned ? (
         <div className="box">
           <h1>Welcome</h1>
           <h3>We are currently scanning your number plate.</h3>
           <h3>Please wait...</h3>
         </div>
-      ) : !user.isRecognized ? (
+      ) : !userData.isRecognized ? (
         <div className="box">
           <h1>Welcome</h1>
           <div className="sub-box">
@@ -114,67 +101,50 @@ function App() {
           </div>
           <input
             type="text"
-            value={user.numberPlate}
-            onChange={(e) => setUser((prevUser) => ({ ...prevUser, numberPlate: e.target.value }))}
+            value={userData.numberPlate}
+            onChange={(e) => setUserData((prevData) => ({ ...prevData, numberPlate: e.target.value }))}
           />
-          <button onClick={() => handleSubmitNumberPlate(user.numberPlate)}>Submit</button>
+          <button onClick={() => handleSubmitNumberPlate(userData.numberPlate)}>Submit</button>
         </div>
-      ) : !user.isRegistered ? (
+      ) : !userData.isRegistered ? (
         <div className="box">
           <h1>Welcome</h1>
-          <h3>Sorry, you are not registered in our system.</h3>
+          <h3>Sorry, you are not registered at our system.</h3>
           <h3>Please download our app and register it.</h3>
-          <button onClick={handleGetData}>Exit</button>
+          <button onClick={getData}>Exit</button>
         </div>
-      ) : user.balance > debtLimit ? (
+      ) : userData.balance > debtLimit ? (
         <div className="box">
-          {!user.isOtpValid && (
+          {!userData.isOtpValid && (
             <Welcome
-              isOtpValid={setUser((prevUser) => ({ ...prevUser, isOtpValid: true }))}
-              name={user.name}
-              numberPlate={user.numberPlate}
+              isOtpValid={(isValid) => setUserData((prevData) => ({ ...prevData, isOtpValid: isValid }))}
+              name={userData.name}
+              numberPlate={userData.numberPlate}
             />
           )}
-          {user.isOtpValid &&
-            !user.isAmountSelectionOpen &&
-            !user.isPetrolSelectionOpen && (
-              <Confirmation
-                petrolType={user.petrolType}
-                Amount={user.defaultAmount}
-                handleModalChange={toggleModal}
-                isConfirmed={completeProcess}
-              />
-            )}
+          {userData.isOtpValid && !userData.isPetrolModalOpen && !userData.isAmountModalOpen && (
+            <Confirmation
+              petrolType={userData.petrolType}
+              amount={userData.amount}
+              handleModalChange={toggleModal}
+              isConfirmed={completeProcess}
+            />
+          )}
 
-          {user.isPetrolSelectionOpen && (
-            <PetrolSelection
-              handlePetrolTypeSelection={(petrolType) =>
-                setUser((prevUser) => ({ ...prevUser, petrolType }))
-              }
-              togglePetrolSelectionModal={() =>
-                setUser((prevUser) => ({ ...prevUser, isPetrolSelectionOpen: false }))
-              }
-            />
+          {userData.isPetrolModalOpen && (
+            <PetrolSelection handlePetrolTypeSelection={(petrolType) => setUserData((prevData) => ({ ...prevData, petrolType }))} togglePetrolSelectionModal={toggleModal} />
           )}
-          {user.isAmountSelectionOpen && (
-            <AmountSelection
-              Amount={user.defaultAmount}
-              onAmountSelection={(amount) =>
-                setUser((prevUser) => ({ ...prevUser, defaultAmount: amount }))
-              }
-              toggleAmountSelectionModal={() =>
-                setUser((prevUser) => ({ ...prevUser, isAmountSelectionOpen: false }))
-              }
-            />
+          {userData.isAmountModalOpen && (
+            <AmountSelection amount={userData.amount} onAmountSelection={(amount) => setUserData((prevData) => ({ ...prevData, amount }))} toggleAmountSelectionModal={toggleModal} />
           )}
         </div>
       ) : (
         <div className="box">
-          <h3>Hi {user.name},</h3>
-          <h3>Your number plate: {user.numberPlate}</h3>
+          <h3>Hi {userData.name}, </h3>
+          <h3>Your number plate: {userData.numberPlate}</h3>
           <h3>Your balance is insufficient.</h3>
-          <h3>Please top up through our app to serve you.</h3>
-          <button onClick={handleGetData}>Exit</button>
+          <h3>Please top up through our app then we will be able to serve you</h3>
+          <button onClick={getData}>Exit</button>
         </div>
       )}
     </div>

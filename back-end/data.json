@@ -2513,5 +2513,440 @@
         "id": "f0bf2543-3b25-4e53-aefc-07eaa2e5637e",
         "timestamp": "2024-08-07T14:23:40.849878",
         "license_number": "IB4-708-GP]"
+    },
+    {
+        "id": "5ca1f477-dca6-46f1-963c-dffd8450df6c",
+        "timestamp": "2024-08-07T18:43:41.247769",
+        "license_number": null
+    },
+    {
+        "id": "4bf94388-105e-47af-a3ba-24149e24839d",
+        "timestamp": "2024-08-07T18:43:42.266034",
+        "license_number": null
+    },
+    {
+        "id": "c77ee969-daa6-41bb-b6a6-997add8f4fca",
+        "timestamp": "2024-08-07T18:43:44.590257",
+        "license_number": null
+    },
+    {
+        "id": "5769f76e-45b2-47a3-9634-6628c7967fe8",
+        "timestamp": "2024-08-07T18:43:46.219642",
+        "license_number": null
+    },
+    {
+        "id": "94c82ca8-e1bf-46b8-a37d-ce4af5c1eba6",
+        "timestamp": "2024-08-07T18:43:47.425227",
+        "license_number": null
+    },
+    {
+        "id": "721b2c59-f056-419d-9d3b-13ae2a640d19",
+        "timestamp": "2024-08-07T18:43:49.266906",
+        "license_number": null
+    },
+    {
+        "id": "19481c3e-a393-43d5-9d01-91c103aec972",
+        "timestamp": "2024-08-07T18:44:49.017226",
+        "license_number": null
+    },
+    {
+        "id": "1e129b93-9737-4886-9ae9-afeb4aeea3a9",
+        "timestamp": "2024-08-07T18:44:51.187468",
+        "license_number": null
+    },
+    {
+        "id": "1be52b40-0dca-4416-9616-6645d31ee060",
+        "timestamp": "2024-08-07T18:44:52.385291",
+        "license_number": null
+    },
+    {
+        "id": "cea2e0da-7e20-4c25-8132-d1b373d74322",
+        "timestamp": "2024-08-07T18:44:53.321772",
+        "license_number": null
+    },
+    {
+        "id": "229dd5d2-9cab-4914-8816-01591d2c24b5",
+        "timestamp": "2024-08-07T18:44:55.008099",
+        "license_number": null
+    },
+    {
+        "id": "ef55cc28-394a-418a-9ff4-ebe1d85f95af",
+        "timestamp": "2024-08-07T18:45:22.854127",
+        "license_number": null
+    },
+    {
+        "id": "10a6eed6-dcc3-4ee6-a778-7933c5f23f47",
+        "timestamp": "2024-08-07T18:45:23.873283",
+        "license_number": null
+    },
+    {
+        "id": "d26807b4-0a78-4626-bc78-fd231d8d6a5a",
+        "timestamp": "2024-08-07T18:45:27.364615",
+        "license_number": null
+    },
+    {
+        "id": "342e005e-7743-4a27-b077-2b790ce5ca40",
+        "timestamp": "2024-08-07T18:45:29.016562",
+        "license_number": null
+    },
+    {
+        "id": "e6d53e19-0152-4084-8554-503a5d1cbc17",
+        "timestamp": "2024-08-07T18:45:29.947880",
+        "license_number": null
+    },
+    {
+        "id": "2568190b-20df-4cde-adea-d5759676c3ab",
+        "timestamp": "2024-08-07T18:45:32.024382",
+        "license_number": null
+    },
+    {
+        "id": "dd11fd9b-73f6-43d9-b17f-83e63b9a8e73",
+        "timestamp": "2024-08-07T18:45:33.420298",
+        "license_number": null
+    },
+    {
+        "id": "a796c751-74ed-4915-8e8b-69f93ef6521b",
+        "timestamp": "2024-08-07T18:45:34.425922",
+        "license_number": null
+    },
+    {
+        "id": "f4e81736-5cb9-4232-91b8-0a9ed7b80c93",
+        "timestamp": "2024-08-07T18:45:35.605467",
+        "license_number": null
+    },
+    {
+        "id": "0b31f14f-9b60-49c5-8bc1-7cdf6a8622ae",
+        "timestamp": "2024-08-07T18:45:37.923443",
+        "license_number": null
+    },
+    {
+        "id": "4c195e0f-2c05-4ac7-952a-db51463c6073",
+        "timestamp": "2024-08-07T18:45:38.877597",
+        "license_number": null
+    },
+    {
+        "id": "803a7c0c-7346-44bd-97df-50c4cefcbd8b",
+        "timestamp": "2024-08-07T18:45:40.053746",
+        "license_number": null
+    },
+    {
+        "id": "e602cccb-625c-441a-b7d9-894b477a73a3",
+        "timestamp": "2024-08-07T18:45:43.079679",
+        "license_number": null
+    },
+    {
+        "id": "5f437199-8246-4cf7-94a8-be6126b8d37c",
+        "timestamp": "2024-08-07T18:45:44.480092",
+        "license_number": null
+    },
+    {
+        "id": "986efda9-8d8c-4732-850c-fa64caf02a0b",
+        "timestamp": "2024-08-07T18:45:45.509568",
+        "license_number": null
+    },
+    {
+        "id": "742b845c-0daa-47bf-a31b-321abc871ba2",
+        "timestamp": "2024-08-07T18:45:46.917653",
+        "license_number": null
+    },
+    {
+        "id": "1cc93503-f008-47f4-a7a9-449b5c2e3c75",
+        "timestamp": "2024-08-07T18:45:48.348045",
+        "license_number": null
+    },
+    {
+        "id": "32bb2edc-d7fc-483c-b8af-2095fa05dd20",
+        "timestamp": "2024-08-07T18:45:50.001689",
+        "license_number": null
+    },
+    {
+        "id": "679bc2c3-2dfc-4e99-ae9e-dfa3278bcf97",
+        "timestamp": "2024-08-07T18:45:50.920016",
+        "license_number": null
+    },
+    {
+        "id": "b4784557-b3f1-4f37-8163-a6c0ad3f5405",
+        "timestamp": "2024-08-07T18:45:53.697669",
+        "license_number": null
+    },
+    {
+        "id": "4e0af783-871b-446f-9ace-9a75e09244a7",
+        "timestamp": "2024-08-07T18:45:55.865828",
+        "license_number": null
+    },
+    {
+        "id": "9105db35-2623-452d-9bb9-c04408e96488",
+        "timestamp": "2024-08-07T18:45:58.177769",
+        "license_number": null
+    },
+    {
+        "id": "ea4fbe78-4a64-4d46-bd68-d86581af22ad",
+        "timestamp": "2024-08-07T18:45:59.119098",
+        "license_number": null
+    },
+    {
+        "id": "143c98b9-c136-476f-8b37-ca516b855777",
+        "timestamp": "2024-08-07T18:46:00.112472",
+        "license_number": null
+    },
+    {
+        "id": "8f389064-7390-4438-9e38-b8daa64ec750",
+        "timestamp": "2024-08-07T18:46:01.535861",
+        "license_number": null
+    },
+    {
+        "id": "54b9da80-9dce-440a-8f11-5dc46179bb3e",
+        "timestamp": "2024-08-07T18:46:02.924620",
+        "license_number": null
+    },
+    {
+        "id": "ed85a52d-8524-420f-a067-cf3fad753287",
+        "timestamp": "2024-08-07T18:46:03.847065",
+        "license_number": null
+    },
+    {
+        "id": "c4624085-1293-4329-8f0c-4e6702baf7bc",
+        "timestamp": "2024-08-07T18:46:09.254184",
+        "license_number": null
+    },
+    {
+        "id": "033aa20a-5469-4a60-ae63-2a1308a3a03b",
+        "timestamp": "2024-08-07T18:46:10.433442",
+        "license_number": null
+    },
+    {
+        "id": "64f61b6b-646c-4263-b241-7b32e4879cfa",
+        "timestamp": "2024-08-07T18:46:11.373368",
+        "license_number": null
+    },
+    {
+        "id": "09a6ed81-0775-4d4c-a740-7f3c14ed3322",
+        "timestamp": "2024-08-07T18:46:12.747451",
+        "license_number": null
+    },
+    {
+        "id": "d3f21ea5-bc65-48b0-95f3-3d31687dfda2",
+        "timestamp": "2024-08-07T18:46:14.137348",
+        "license_number": null
+    },
+    {
+        "id": "f4090685-3dc3-4fa2-992d-327e913a9d5d",
+        "timestamp": "2024-08-07T18:46:15.767856",
+        "license_number": null
+    },
+    {
+        "id": "7f671dde-8795-4620-9cd7-767039e07b49",
+        "timestamp": "2024-08-07T18:46:16.927872",
+        "license_number": null
+    },
+    {
+        "id": "4c3de439-39e6-4f40-9230-e8190a20037a",
+        "timestamp": "2024-08-07T18:46:18.392742",
+        "license_number": null
+    },
+    {
+        "id": "d7efdb07-57c6-483d-aed1-6f6a4b246e9c",
+        "timestamp": "2024-08-07T18:46:19.535262",
+        "license_number": null
+    },
+    {
+        "id": "16b10e5f-6419-4d62-b673-1875e777af8f",
+        "timestamp": "2024-08-07T18:46:22.541890",
+        "license_number": null
+    },
+    {
+        "id": "5730a3f0-b816-46b1-9a91-f9b7c49debe4",
+        "timestamp": "2024-08-07T18:46:23.936840",
+        "license_number": null
+    },
+    {
+        "id": "82ad5eee-e39c-4b44-aa79-173396bfbda7",
+        "timestamp": "2024-08-07T18:46:27.177189",
+        "license_number": null
+    },
+    {
+        "id": "8f2b68e7-5bea-4587-8adc-a8f92e217556",
+        "timestamp": "2024-08-07T18:46:28.331647",
+        "license_number": null
+    },
+    {
+        "id": "d3643cb0-3347-4a89-a329-0f605b6906ab",
+        "timestamp": "2024-08-07T18:46:30.057942",
+        "license_number": null
+    },
+    {
+        "id": "25e6d625-3f24-45ca-a45d-e2ca4d759220",
+        "timestamp": "2024-08-07T18:46:30.992847",
+        "license_number": null
+    },
+    {
+        "id": "cf5eb464-5890-46d1-b591-435ce7edf381",
+        "timestamp": "2024-08-07T18:46:31.956041",
+        "license_number": null
+    },
+    {
+        "id": "f893d2dd-9a23-42c5-811d-122497da3315",
+        "timestamp": "2024-08-07T18:46:32.889932",
+        "license_number": null
+    },
+    {
+        "id": "c1092c17-a58f-4b77-8dd1-da5545af7052",
+        "timestamp": "2024-08-07T18:46:34.242951",
+        "license_number": null
+    },
+    {
+        "id": "5bcb682f-1a9e-4460-960b-e04b869bec51",
+        "timestamp": "2024-08-07T18:46:35.170022",
+        "license_number": null
+    },
+    {
+        "id": "884a574c-e31c-4478-bdb7-c885bf1a5f1e",
+        "timestamp": "2024-08-07T18:46:36.079107",
+        "license_number": null
+    },
+    {
+        "id": "7c53cb5f-0b61-47ab-8519-309b82274af2",
+        "timestamp": "2024-08-07T18:46:37.353129",
+        "license_number": null
+    },
+    {
+        "id": "d2554df2-37cf-45a9-9f97-608acd725b47",
+        "timestamp": "2024-08-07T18:46:38.645457",
+        "license_number": "9 ASF"
+    },
+    {
+        "id": "67726dbb-e89c-4d8d-a3eb-8d266198c2ca",
+        "timestamp": "2024-08-07T18:46:40.417474",
+        "license_number": null
+    },
+    {
+        "id": "a715e71d-b7f1-4b7b-adf1-e999eb5cc452",
+        "timestamp": "2024-08-07T18:46:41.374238",
+        "license_number": null
+    },
+    {
+        "id": "dd702578-a82f-42e9-9dca-97689ccd9cdf",
+        "timestamp": "2024-08-07T18:46:42.563108",
+        "license_number": null
+    },
+    {
+        "id": "93217ce8-3e6e-492c-a940-27bfd2df6318",
+        "timestamp": "2024-08-07T18:46:43.699608",
+        "license_number": "9 ASF"
+    },
+    {
+        "id": "488e5a46-d6db-432a-8041-0e4ddf74d2cf",
+        "timestamp": "2024-08-07T18:49:00.121032",
+        "license_number": null
+    },
+    {
+        "id": "780e93c1-39c5-4fb4-a195-51d3fcf332b1",
+        "timestamp": "2024-08-07T18:49:01.610823",
+        "license_number": null
+    },
+    {
+        "id": "68c29173-7f04-47f3-a9d4-feb1fc8c2c87",
+        "timestamp": "2024-08-07T18:49:05.586813",
+        "license_number": null
+    },
+    {
+        "id": "5df55951-5af2-4809-903c-d3efe68bfe34",
+        "timestamp": "2024-08-07T18:49:06.556455",
+        "license_number": null
+    },
+    {
+        "id": "2fe518be-c26f-4e46-8836-431694c69fe5",
+        "timestamp": "2024-08-07T18:49:07.520780",
+        "license_number": null
+    },
+    {
+        "id": "a56f2dd1-09f2-4dcd-b3fc-bb80177ed73b",
+        "timestamp": "2024-08-07T18:49:08.479338",
+        "license_number": null
+    },
+    {
+        "id": "78d15255-123c-4642-9d35-9e8ff230c953",
+        "timestamp": "2024-08-07T18:49:09.419428",
+        "license_number": null
+    },
+    {
+        "id": "47a57ffe-eeaf-4aa5-a07b-e5b5231b569a",
+        "timestamp": "2024-08-07T18:49:10.461657",
+        "license_number": null
+    },
+    {
+        "id": "75a41475-351b-49d9-9d65-31f14f5d3003",
+        "timestamp": "2024-08-07T18:49:11.419759",
+        "license_number": null
+    },
+    {
+        "id": "603a6804-024a-4fd9-9276-00d63716ae8f",
+        "timestamp": "2024-08-07T18:49:12.380101",
+        "license_number": null
+    },
+    {
+        "id": "6aa46a37-f6a7-4e2c-b777-c3243f19664d",
+        "timestamp": "2024-08-07T18:49:13.643119",
+        "license_number": "9 ASF"
+    },
+    {
+        "id": "5be2900e-c629-4184-8e3f-e590bb92b057",
+        "timestamp": "2024-08-07T18:50:08.155219",
+        "license_number": null
+    },
+    {
+        "id": "354fb4b1-a525-4c8d-8a7f-4113e1127e82",
+        "timestamp": "2024-08-07T18:50:12.127563",
+        "license_number": null
+    },
+    {
+        "id": "41735ddf-f562-40be-b9c2-9b2805b6a106",
+        "timestamp": "2024-08-07T18:50:14.535527",
+        "license_number": null
+    },
+    {
+        "id": "385cbd2d-0e0a-4352-b3bc-82be4faeff2e",
+        "timestamp": "2024-08-07T18:50:15.487750",
+        "license_number": null
+    },
+    {
+        "id": "ee4b6fd1-39b6-48e0-b98e-7e0d4378b0ee",
+        "timestamp": "2024-08-07T18:50:16.901947",
+        "license_number": null
+    },
+    {
+        "id": "8d6dd3ab-5506-4c06-9d28-913947c0e0ce",
+        "timestamp": "2024-08-07T18:50:17.883438",
+        "license_number": null
+    },
+    {
+        "id": "efaf2038-4f7e-4fbc-98d5-c1b66a299951",
+        "timestamp": "2024-08-07T18:50:19.037844",
+        "license_number": "9 ASF"
+    },
+    {
+        "id": "ac2c4e0c-d93f-47fb-9813-ed45806ebf4e",
+        "timestamp": "2024-08-07T19:44:26.606982",
+        "license_number": null
+    },
+    {
+        "id": "1ce19a69-0e1b-4d4a-8e32-7ecf5b201269",
+        "timestamp": "2024-08-07T19:44:28.345951",
+        "license_number": null
+    },
+    {
+        "id": "9a5887c7-439a-48a4-985c-475d290a32a7",
+        "timestamp": "2024-08-07T19:44:29.336443",
+        "license_number": null
+    },
+    {
+        "id": "64abe100-88f3-4278-8409-39e385700f04",
+        "timestamp": "2024-08-07T19:44:30.260724",
+        "license_number": null
+    },
+    {
+        "id": "be9e9124-8eff-42ad-9a82-b171b8d50c7d",
+        "timestamp": "2024-08-07T19:44:31.680085",
+        "license_number": null
     }
 ]

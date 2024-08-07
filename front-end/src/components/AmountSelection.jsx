@@ -14,7 +14,7 @@ const AmountSelection = ({ Amount, onAmountSelection, toggleAmountSelectionModal
   const handleFullTank = (event) => {
     event.preventDefault();
     onAmountSelection(-1);
-    toggleAmountSelectionModal(false);
+    toggleAmountSelectionModal("amount");
   };
 
   return (
@@ -48,7 +48,7 @@ const AmountSelection = ({ Amount, onAmountSelection, toggleAmountSelectionModal
               value={Amount}
               onChange={handleAmountChange}
             />
-            <button onClick={() => toggleAmountSelectionModal(false)}>Submit</button>
+            <button onClick={() => toggleAmountSelectionModal("amount")}>Submit</button>
           </div>
         )}
       </div>

@@ -9,7 +9,7 @@ const PetrolSelection = ({ handlePetrolTypeSelection, togglePetrolSelectionModal
   const handleOnClick = (petrolType) => (event) => {
     event.preventDefault();
     handlePetrolTypeSelection(petrolType);
-    togglePetrolSelectionModal(false);
+    togglePetrolSelectionModal("petrol");
   };
 
   return (
