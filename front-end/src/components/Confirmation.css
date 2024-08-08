@@ -1,0 +1,26 @@
+
+.confirmBox .details h5{
+    margin: 0;
+}
+
+
+
+.changable {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px auto;
+    width: 500px;
+}
+
+.changable button {
+    background: #ff5441;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 40px;
+    margin: 0;
+    cursor: pointer;
+}
+
+

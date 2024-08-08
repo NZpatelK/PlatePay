@@ -12,11 +12,11 @@ from ultralytics.yolo.utils import DEFAULT_CONFIG, ROOT, ops
 from ultralytics.yolo.utils.checks import check_imgsz
 from ultralytics.yolo.utils.plotting import Annotator, colors, save_one_box
 
-
 import easyocr
 import cv2
 
 reader = easyocr.Reader(['en'], gpu=True)
+
 
 def perform_ocr_on_image(img, coordinates):
     x, y, w, h = map(int, coordinates)
@@ -95,8 +95,7 @@ class DetectionPredictor(BasePredictor):
                 label = None if self.args.hide_labels else (
                     self.model.names[c] if self.args.hide_conf else f'{self.model.names[c]} {conf:.2f}')
 
-
-                text_ocr = perform_ocr_on_image(im0,xyxy)
+                text_ocr = perform_ocr_on_image(im0, xyxy)
                 label = text_ocr
                 self.result = label
 
@@ -110,7 +109,6 @@ class DetectionPredictor(BasePredictor):
 
         return log_string
 
-
 def write_in_json(result):
     # Define the file path
     file_path = 'data.json'
@@ -122,26 +120,13 @@ def write_in_json(result):
         "license_number": result  # Replace with the new license number
     }
 
-    # Check if the file exists
-    if os.path.exists(file_path):
-        # Read the existing data
-        with open(file_path, 'r') as file:
-            data = json.load(file)
+    # Initialize the data as a list with the new data
+    data = [new_data]
 
-        # If the existing data is a list, append the new data
-        if isinstance(data, list):
-            data.append(new_data)
-        else:
-            # If it's not a list, you might want to replace or merge data
-            # Here we replace the existing data with the new data
-            data = new_data
-    else:
-        # If the file doesn't exist, initialize the data as a list
-        data = [new_data]
-
-    # Write the updated data back to the file
+    # Write the updated data to the file, clearing any existing content
     with open(file_path, 'w') as file:
-        json.dump(data, file, indent=4)  # Use indent for pretty-printing
+        json.dump(data, file, indent=4)
+
 
 @hydra.main(version_base=None, config_path=str(DEFAULT_CONFIG.parent), config_name=DEFAULT_CONFIG.name)
 def predict(cfg):
@@ -152,6 +137,7 @@ def predict(cfg):
     predictor()
     if hasattr(predictor, 'result'):
         write_in_json(predictor.result)
+
 
 def get_licence_plate():
     # Define the file path
@@ -172,22 +158,13 @@ def get_licence_plate():
         return None
 
 
-
 def get_result():
-    print("predict page")
     current_number = get_licence_plate()
-    print("predict start....")
     predict()
     new_number = get_licence_plate()
 
-    print(current_number)
-    print(new_number)
-
-    return ((current_number != new_number) and (new_number is not None) and (not new_number.isspace()))
-
+    return (current_number != new_number) and (new_number is not None) and (not new_number.isspace())
 
 # if __name__ == "__main__":
 #     print("predict page")
 #     get_result()
-
-

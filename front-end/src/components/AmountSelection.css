@@ -1,0 +1,10 @@
+.amount-type {
+    margin: 20px auto;
+}
+
+.amount-type button {
+    margin: 10px 0;
+    color: #ffffff;
+    width: 400px;
+    text-transform: uppercase;
+}
