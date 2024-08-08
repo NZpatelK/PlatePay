@@ -41,16 +41,12 @@ def capture():
             cv2.imwrite(save_path, img_roi)
             cv2.rectangle(img, (0, 200), (640, 300), (0, 255, 0), cv2.FILLED)
             cv2.putText(img, "Scan Saved", (15, 265), cv2.FONT_HERSHEY_COMPLEX, 2, (0, 0, 255), 2)
-            # cv2.imshow("Result", img)
-            print(f"Saved: {save_path}")
             cv2.waitKey(500)
             output_value = predict_modified.get_result()
 
             if output_value:
-                print("real time", output_value)
                 cap.release()
                 cv2.destroyAllWindows()
-                print("destroy complete it")
                 break
 
 

@@ -71,6 +71,8 @@ function App() {
     setIsRecongized(false);
     setIsRegistered(false);
     setIsOtpValid(false);
+
+    socket.emit('get_data');
   };
 
   const completeProcess = () => {
