@@ -21,6 +21,7 @@ PlatePay simplifies the refueling process by:
 - **Backend:** Python
 - **Communication:** Socket.io
 - **AI Tools:** Ultralytics, YOLO, OpenCV
+- **Data:** Number Plate Dataset - https://www.kaggle.com/datasets/andrewmvd/car-plate-detection
 
 ### Frontend 🖥️
 
