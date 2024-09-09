@@ -46,6 +46,10 @@ The frontend and backend communicate via Socket.io, ensuring real-time data tran
 - Pre-filled user data 📤
 - Credit balance information 💰
 
+## Demo Video 🎥
+
+Here is the demo video of my project: [[Link to Demo Video](https://www.linkedin.com/posts/karan-h-patel_ai-techinnovation-appdevelopment-activity-7238737034247290880-tJcN?utm_source=share&utm_medium=member_desktop)]
+
 ## Installation 🛠️
 
 To set up PlatePay locally, follow these steps:
